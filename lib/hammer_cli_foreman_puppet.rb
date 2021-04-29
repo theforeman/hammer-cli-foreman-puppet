@@ -41,4 +41,12 @@ module HammerCLIForemanPuppet
     'HammerCLIForemanPuppet::SmartClassParameter',
     'hammer_cli_foreman_puppet/smart_class_parameter'
   )
+  # subcommands to hammer_cli_foreman commands
+  require 'hammer_cli_foreman_puppet/host'
+  require 'hammer_cli_foreman_puppet/organization'
+  require 'hammer_cli_foreman_puppet/location'
+  require 'hammer_cli_foreman_puppet/smart_proxy'
+  require 'hammer_cli_foreman_puppet/combination'
+  require 'hammer_cli_foreman_puppet/hostgroup'
 end
+
