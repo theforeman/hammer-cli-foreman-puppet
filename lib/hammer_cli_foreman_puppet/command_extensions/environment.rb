@@ -2,7 +2,7 @@ module HammerCLIForemanPuppet
   module CommandExtensions
     class PuppetEnvironment < HammerCLI::CommandExtensions
       # Remove when support of --environment options is ended.
-      base.option_family(
+      option_family(
         aliased_resource: 'environment',
         description: _('Puppet environment'),
         deprecation: _("Use %s instead") % '--puppet-environment[-id]',
