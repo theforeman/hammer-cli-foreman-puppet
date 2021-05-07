@@ -1,4 +1,3 @@
-
 module HammerCLIForemanPuppet
   module AssociatingCommands
     module PuppetEnvironment
