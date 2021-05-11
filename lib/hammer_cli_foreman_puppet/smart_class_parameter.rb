@@ -1,6 +1,6 @@
 module HammerCLIForemanPuppet
 
-  class SmartClassParametersBriefList < HammerCLIForeman::ListCommand
+  class SmartClassParametersBriefList < HammerCLIForemanPuppet::ListCommand
     resource :smart_class_parameters, :index
     command_name 'sc-params'
 
@@ -36,10 +36,10 @@ module HammerCLIForemanPuppet
     end
   end
 
-  class SmartClassParameter < HammerCLIForeman::Command
+  class SmartClassParameter < HammerCLIForemanPuppet::Command
     resource :smart_class_parameters
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIForemanPuppet::ListCommand
       output SmartClassParametersList.output_definition
 
       def extend_data(res)
@@ -52,7 +52,7 @@ module HammerCLIForemanPuppet
       extend_with(HammerCLIForemanPuppet::CommandExtensions::PuppetEnvironment.new)
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIForemanPuppet::InfoCommand
       output ListCommand.output_definition do
         field :description, _("Description")
         field :parameter_type, _("Type")
@@ -98,7 +98,7 @@ module HammerCLIForemanPuppet
       end
     end
 
-    class UpdateCommand < HammerCLIForeman::UpdateCommand
+    class UpdateCommand < HammerCLIForemanPuppet::UpdateCommand
       success_message _('Parameter updated.')
       failure_message _('Could not update the parameter')
 
@@ -135,7 +135,7 @@ module HammerCLIForemanPuppet
       end
     end
 
-    class AddMatcherCommand < HammerCLIForeman::CreateCommand
+    class AddMatcherCommand < HammerCLIForemanPuppet::CreateCommand
       resource :override_values
       command_name 'add-matcher'
 
@@ -159,7 +159,7 @@ module HammerCLIForemanPuppet
       end
     end
 
-    class RemoveMatcherCommand < HammerCLIForeman::DeleteCommand
+    class RemoveMatcherCommand < HammerCLIForemanPuppet::DeleteCommand
       resource :override_values
       command_name 'remove-matcher'
 

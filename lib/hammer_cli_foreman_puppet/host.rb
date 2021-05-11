@@ -36,9 +36,10 @@ module HammerCLIForemanPuppet
     end
   end
 
-  class Host < HammerCLIForeman::Command
+  class Host < HammerCLIForemanPuppet::Command
 
-    class PuppetClassesCommand < HammerCLIForeman::ListCommand
+    class PuppetClassesCommand < HammerCLIForemanPuppet::ListCommand
+      include EnvironmentNameMapping
       command_name "puppet-classes"
       resource :puppetclasses
 
@@ -64,7 +65,8 @@ module HammerCLIForemanPuppet
       end
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIForemanPuppet::InfoCommand
+      include EnvironmentNameMapping
       output do
         field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
         field nil, _("Puppet CA Proxy"), Fields::SingleReference, :key => :puppet_ca_proxy
