@@ -1,9 +1,9 @@
 module HammerCLIForemanPuppet
-  class PuppetClass < HammerCLIForeman::Command
+  class PuppetClass < HammerCLIForemanPuppet::Command
 
     resource :puppetclasses
 
-    class ListCommand < HammerCLIForeman::ListCommand
+    class ListCommand < HammerCLIForemanPuppet::ListCommand
       output do
         field :id, _("Id")
         field :name, _("Name")
@@ -24,7 +24,7 @@ module HammerCLIForemanPuppet
       extend_with(HammerCLIForemanPuppet::CommandExtensions::PuppetEnvironment.new)
     end
 
-    class InfoCommand < HammerCLIForeman::InfoCommand
+    class InfoCommand < HammerCLIForemanPuppet::InfoCommand
       output ListCommand.output_definition do
         collection :smart_class_parameters, _('Smart class parameters'), :numbered => false do
           custom_field Fields::Reference, :name_key => :parameter

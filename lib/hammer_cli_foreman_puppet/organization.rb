@@ -3,8 +3,8 @@ require 'hammer_cli_foreman_puppet/references'
 require 'hammer_cli_foreman_puppet/command_extensions/organization'
 
 module HammerCLIForemanPuppet
-  class Organization < HammerCLIForeman::Command
-    class InfoCommand < HammerCLIForeman::InfoCommand
+  class Organization < HammerCLIForemanPuppet::Command
+    class InfoCommand < HammerCLIForemanPuppet::InfoCommand
       output do
         HammerCLIForemanPuppet::References.environments(self)
       end
