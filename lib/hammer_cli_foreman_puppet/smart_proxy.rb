@@ -4,9 +4,10 @@ module HammerCLIForemanPuppet
   class ImportPuppetClassesCommand < HammerCLIForeman::Command
     action :import_puppetclasses
 
-    command_name  "import-classes"
-
+    command_name "import-classes"
+    desc _("Import Puppet classes from Puppet proxy")
     option "--dryrun", :flag, _("Do not run the import")
+
 
     output do
       field :message, _("Result"), Fields::LongText
@@ -50,7 +51,7 @@ module HammerCLIForemanPuppet
 
     extend_with(HammerCLIForemanPuppet::CommandExtensions::PuppetEnvironment.new)
   end
-  HammerCLIForeman::SmartProxy.subcommand 'import-puppet-classesCommand',
+  HammerCLIForeman::SmartProxy.subcommand 'import-classes',
                                            HammerCLIForemanPuppet::ImportPuppetClassesCommand.desc,
                                            HammerCLIForemanPuppet::ImportPuppetClassesCommand
 end

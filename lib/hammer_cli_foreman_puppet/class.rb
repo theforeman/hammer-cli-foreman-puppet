@@ -40,7 +40,7 @@ module HammerCLIForemanPuppet
     end
 
 
-    class SCParamsCommand < HammerCLIForeman::SmartClassParametersBriefList
+    class SCParamsCommand < HammerCLIForemanPuppet::SmartClassParametersBriefList
       build_options_for :puppetclasses
 
       def validate_options
