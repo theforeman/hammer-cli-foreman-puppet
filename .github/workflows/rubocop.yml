@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - master
+    - add_rubocop
 jobs:
   rubocop:
     runs-on: ubuntu-latest
