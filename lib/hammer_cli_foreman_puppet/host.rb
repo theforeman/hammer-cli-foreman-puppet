@@ -1,3 +1,4 @@
+require 'hammer_cli_foreman/host'
 require 'hammer_cli_foreman_puppet/class'
 require 'hammer_cli_foreman_puppet/host'
 require 'hammer_cli_foreman_puppet/command_extensions/host'
