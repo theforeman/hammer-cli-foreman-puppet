@@ -3,9 +3,15 @@ require 'hammer_cli_foreman_puppet/references'
 require 'hammer_cli_foreman_puppet/command_extensions/location'
 
 module HammerCLIForemanPuppet
+  module LocationAddAssociatedCommand
+    def self.included(base)
+      HammerCLIForemanPuppet::AssociatingCommands::PuppetEnvironment.extend_command(base)
+      base.create_subcommand
+    end
+  end
+
   class Location < HammerCLIForemanPuppet::Command
     class InfoCommand < HammerCLIForemanPuppet::InfoCommand
-      include EnvironmentNameMapping
       output do
         HammerCLIForemanPuppet::References.environments(self)
       end
@@ -22,7 +28,8 @@ module HammerCLIForemanPuppet
     HammerCLIForemanPuppet::CommandExtensions::LocationInfo.new
   )
 
-  ::HammerCLIForeman::Location.instance_eval do
-    HammerCLIForemanPuppet::AssociatingCommands::PuppetEnvironment.extend_command(self)
+  HammerCLIForeman::Location.class_eval do
+    extend HammerCLIForemanPuppet::AssociatingCommands::ExtendCommands
+    include HammerCLIForemanPuppet::LocationAddAssociatedCommand
   end
 end
