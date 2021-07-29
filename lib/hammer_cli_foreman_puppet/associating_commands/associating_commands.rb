@@ -1,5 +1,14 @@
 module HammerCLIForemanPuppet
   module AssociatingCommands
+    module ExtendCommands
+      def create_subcommand(name = :PuppetEnvironment)
+        commands = constants.select { |c| c.to_s.include? name.to_s }.map { |p| const_get(p)}
+        commands.each do |command|
+          subcommand(command.command_name, command.desc, command, warning: command.warning)
+        end
+      end
+    end
+
     module PuppetEnvironment
       extend HammerCLIForeman::AssociatingCommands::CommandExtension
 
