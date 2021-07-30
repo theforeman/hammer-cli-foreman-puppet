@@ -2,6 +2,7 @@ require 'hammer_cli_foreman/smart_proxy'
 
 module HammerCLIForemanPuppet
   class ImportPuppetClassesCommand < HammerCLIForemanPuppet::Command
+    resource :smart_proxies
     action :import_puppetclasses
 
     command_name "import-classes"
