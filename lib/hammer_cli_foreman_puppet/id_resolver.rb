@@ -1,20 +1,17 @@
 module HammerCLIForemanPuppet
-  class Searchables < HammerCLIForeman::Searchables
-    SEARCHABLES = {
-      :environment =>        [s_name(_('Puppet environment name'))],
-      :puppet_environment => [s_name(_('Puppet environment name'))],
-      :puppetclass =>      [ s_name(_("Puppet class name")) ],
-      :smart_class_parameter => [ s_name(_("Smart class parameter name"), :editable => false) ],
-    }.freeze
+  module PuppetIdResolver
+    # puppet class search results are in non-standard format
+    # and needs to be un-hashed first
+    def puppetclass_id(options)
+      return options[HammerCLI.option_accessor_name('id')] if options[HammerCLI.option_accessor_name('id')]
 
-    DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))].freeze
-
-    def for(resource)
-      SEARCHABLES[resource.singular_name.to_sym] || DEFAULT_SEARCHABLES
+      resource = @api.resource(:puppetclasses)
+      results = find_resource_raw(:puppetclasses, options)
+      require('hammer_cli_foreman_puppet/class')
+      results = HammerCLIForemanPuppet::PuppetClass::ListCommand.unhash_classes(results)
+      pick_result(results, resource)['id']
     end
-  end
 
-  class IdResolver < HammerCLIForeman::IdResolver
     def puppetclass_ids(options)
       resource_name = :puppetclasses
       resource = @api.resource(resource_name)
@@ -43,5 +40,34 @@ module HammerCLIForemanPuppet
     def puppet_environment_ids(options)
       get_ids(:environments, options)
     end
+
+    def create_smart_class_parameters_search_options(options, _mode = nil)
+      search_options = {}
+      value = options[HammerCLI.option_accessor_name('name')]
+      search_options[:search] = "key = \"#{value}\""
+      search_options[:puppetclass_id] = puppetclass_id(scoped_options('puppetclass', options))
+      search_options
+    end
   end
+
+  class Searchables < HammerCLIForeman::Searchables
+    SEARCHABLES = {
+      :environment =>        [s_name(_('Puppet environment name'))],
+      :puppet_environment => [s_name(_('Puppet environment name'))],
+      :puppetclass =>      [ s_name(_("Puppet class name")) ],
+      :smart_class_parameter => [ s_name(_("Smart class parameter name"), :editable => false) ],
+    }.freeze
+
+    DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))].freeze
+
+    def for(resource)
+      SEARCHABLES[resource.singular_name.to_sym] || super(resource)
+    end
+  end
+
+  class IdResolver < HammerCLIForeman::IdResolver
+  end
+  # Temp workaround for resolvers in case of multiple plugins
+  # extensions of the same command
+  HammerCLIForeman::IdResolver.include HammerCLIForemanPuppet::PuppetIdResolver
 end

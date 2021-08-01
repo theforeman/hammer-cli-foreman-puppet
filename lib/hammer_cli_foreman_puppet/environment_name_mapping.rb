@@ -13,7 +13,7 @@ module HammerCLIForemanPuppet
       end
 
       def resource_alias_name_mapping
-        HammerCLIForemanPuppet::RESOURCE_ALIAS_NAME_MAPPING
+        super.merge(HammerCLIForemanPuppet::RESOURCE_ALIAS_NAME_MAPPING.dup)
       end
     end
   end
