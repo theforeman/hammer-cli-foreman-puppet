@@ -1,5 +1,6 @@
 module HammerCLIForemanPuppet
   require 'hammer_cli'
+  require 'hammer_cli/logger'
   require 'hammer_cli_foreman'
 
   require 'hammer_cli_foreman_puppet/version'
@@ -49,4 +50,12 @@ module HammerCLIForemanPuppet
     'HammerCLIForemanPuppet::SmartClassParameter',
     'hammer_cli_foreman_puppet/smart_class_parameter'
   )
+
+  # Plugins extensions
+  begin
+    require 'hammer_cli_foreman_puppet/discovery'
+  rescue Exception => e
+    logger = Logging.logger['HammerCLIForemanPuppet::Discovery']
+    logger.debug("Discovery plugin was not found: #{e}")
+  end
 end
