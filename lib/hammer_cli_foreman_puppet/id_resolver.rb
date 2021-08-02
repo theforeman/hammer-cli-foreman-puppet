@@ -41,6 +41,20 @@ module HammerCLIForemanPuppet
       get_ids(:environments, options)
     end
 
+    def create_puppetclasses_search_options(options, mode = nil)
+      searchables(@api.resource(:puppetclasses)).each do |s|
+        value = options[HammerCLI.option_accessor_name(s.name.to_s)]
+        values = options[HammerCLI.option_accessor_name(s.plural_name.to_s)]
+        if value && (mode.nil? || mode == :single)
+          return { search: "#{s.name} = \"#{value}\"" }
+        elsif values && (mode.nil? || mode == :multi)
+          query = values.map { |v| "#{s.name} = \"#{v}\"" }.join(' or ')
+          return { search: query }
+        end
+      end
+      {}
+    end
+
     def create_smart_class_parameters_search_options(options, _mode = nil)
       search_options = {}
       value = options[HammerCLI.option_accessor_name('name')]
