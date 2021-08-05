@@ -4,7 +4,6 @@ eval_gemfile(dev_gemfile) if File.exist?(dev_gemfile)
 gemspec
 
 group :test do
-  gem 'ci_reporter', '>= 1.6.3', '< 2.0.0', :require => false
   gem 'minitest'
   gem 'minitest-spec-context'
   gem 'mocha'
