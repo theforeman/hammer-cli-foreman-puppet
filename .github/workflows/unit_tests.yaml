@@ -16,13 +16,16 @@ jobs:
         ruby:
           - 2.5
           - 2.7
+        core-branch:
+          - master
+          - 3.0.0
 
     steps:
       - name: Get hammer-cli-foreman
         uses: actions/checkout@v2
         with:
           repository: theforeman/hammer-cli-foreman
-          ref: master
+          ref: ${{ matrix.core-branch }}
           path: hammer-cli-foreman
       - name: Get hammer-cli-foreman-puppet
         uses: actions/checkout@v2
