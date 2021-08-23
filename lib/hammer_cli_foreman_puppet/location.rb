@@ -1,5 +1,4 @@
 require 'hammer_cli_foreman/location'
-require 'hammer_cli_foreman_puppet/references'
 require 'hammer_cli_foreman_puppet/command_extensions/location'
 
 module HammerCLIForemanPuppet
@@ -13,7 +12,7 @@ module HammerCLIForemanPuppet
   class Location < HammerCLIForemanPuppet::Command
     class InfoCommand < HammerCLIForemanPuppet::InfoCommand
       output do
-        HammerCLIForemanPuppet::References.environments(self)
+        HammerCLIForemanPuppet::PuppetReferences.environments(self)
       end
     end
   end
