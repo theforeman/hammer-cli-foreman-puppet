@@ -16,16 +16,19 @@ jobs:
         ruby:
           - 2.5
           - 2.7
-        core-branch:
-          - master
-          - 3.0.0
 
     steps:
+      - name: Get hammer-cli
+        uses: actions/checkout@v2
+        with:
+          repository: theforeman/hammer-cli
+          ref: master
+          path: hammer-cli
       - name: Get hammer-cli-foreman
         uses: actions/checkout@v2
         with:
           repository: theforeman/hammer-cli-foreman
-          ref: ${{ matrix.core-branch }}
+          ref: master
           path: hammer-cli-foreman
       - name: Get hammer-cli-foreman-puppet
         uses: actions/checkout@v2
@@ -33,7 +36,8 @@ jobs:
           path: hammer-cli-foreman-puppet
       - name: Configure local gem dependencies
         run: |
-          echo "gemspec path: '../hammer-cli-foreman', name: 'hammer_cli_foreman'" > Gemfile.local.rb
+          echo "gemspec path: '../hammer-cli', name: 'hammer_cli'" > Gemfile.local.rb
+          echo "gemspec path: '../hammer-cli-foreman', name: 'hammer_cli_foreman'" >> Gemfile.local.rb
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
