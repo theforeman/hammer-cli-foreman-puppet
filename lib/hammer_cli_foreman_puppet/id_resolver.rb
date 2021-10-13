@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module HammerCLIForemanPuppet
   module PuppetIdResolver
     # puppet class search results are in non-standard format

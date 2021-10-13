@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'rake/testtask'
 require 'ci/reporter/rake/minitest'
 

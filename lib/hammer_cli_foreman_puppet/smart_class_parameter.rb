@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module HammerCLIForemanPuppet
   class SmartClassParametersBriefList < HammerCLIForemanPuppet::ListCommand
     resource :smart_class_parameters, :index

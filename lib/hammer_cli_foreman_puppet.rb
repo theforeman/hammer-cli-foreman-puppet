@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module HammerCLIForemanPuppet
   require 'hammer_cli'
   require 'hammer_cli/logger'

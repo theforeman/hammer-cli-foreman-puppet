@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'hammer_cli_foreman_discovery/discovery'
 require 'hammer_cli_foreman_puppet/command_extensions/discovery'
 require 'hammer_cli_foreman_puppet/command_extensions/environment'

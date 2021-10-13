@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'hammer_cli_foreman/location'
 require 'hammer_cli_foreman_puppet/command_extensions/location'
 

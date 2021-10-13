@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require File.join(File.dirname(__FILE__), '../test_output_adapter')
 
 class IdResolverTestProxy
@@ -64,14 +65,14 @@ module CommandTestHelper
 
   module ClassMethods
     def with_params(params, &block)
-      context 'with params ' + params.to_s do
+      context "with params #{params.to_s}" do
         let(:with_params) { params }
         instance_eval &block
       end
     end
 
     def it_should_call_action(action, params, headers = {})
-      it 'should call action ' + action.to_s do
+      it "should call action #{action.to_s}" do
         arguments ||= respond_to?(:with_params) ? with_params : []
         ApipieBindings::API.any_instance.expects(:call).with do |r, a, p, h, o|
           (r == cmd.resource.name && a == action && p == params && h == headers)
@@ -81,7 +82,7 @@ module CommandTestHelper
     end
 
     def it_should_call_action_and_test_params(action, &block)
-      it 'should call action ' + action.to_s do
+      it "should call action #{action.to_s}" do
         arguments ||= respond_to?(:with_params) ? with_params : []
         ApipieBindings::API.any_instance.expects(:call).with do |r, a, p, h, o|
           (r == cmd.resource.name && a == action && yield(p))
@@ -91,13 +92,13 @@ module CommandTestHelper
     end
 
     def it_should_fail_with(message, arguments = [])
-      it 'should fail with ' + message.to_s do
+      it "should fail with #{message.to_s}" do
         _(cmd.run(arguments)).must_equal HammerCLI::EX_USAGE
       end
     end
 
     def it_should_accept(message, arguments = [])
-      it 'should accept ' + message.to_s do
+      it "should accept #{message.to_s}" do
         out, err = capture_io do
           _(cmd.run(arguments)).must_equal HammerCLI::EX_OK
         end
@@ -105,7 +106,7 @@ module CommandTestHelper
     end
 
     def it_should_output(message, adapter = :base)
-      it "should output '" + message.to_s + "'" do
+      it "should output '#{message.to_s}'" do
         arguments ||= respond_to?(:with_params) ? with_params : []
         cmd.stubs(:context).returns(ctx.update(adapter: adapter))
         out, err = capture_io do
@@ -116,7 +117,7 @@ module CommandTestHelper
     end
 
     def it_should_print_column(column_name, arguments = nil)
-      it 'should print column ' + column_name do
+      it "should print column #{column_name}" do
         arguments ||= respond_to?(:with_params) ? with_params : []
 
         cmd.stubs(:context).returns(ctx.update(adapter: :test))

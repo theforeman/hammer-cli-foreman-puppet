@@ -4,6 +4,9 @@ inherit_gem:
 
 inherit_from: .rubocop_todo.yml
 
+AllCops:
+  Rails: disable
+
 Layout/LineLength:
   Max: 130
   Exclude:

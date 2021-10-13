@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class FakeSearchables
   def initialize(searchable_fields, editable_fields = [])
     @searchables = []

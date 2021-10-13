@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module ResourceMocks
   def self.mock_action_call(resource, action, value, params = :default)
     response = ApipieBindings::Example.new('GET', '/', '', 200, JSON.dump(value))
