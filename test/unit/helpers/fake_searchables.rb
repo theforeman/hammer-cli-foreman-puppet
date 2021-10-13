@@ -11,7 +11,7 @@ class FakeSearchables
     end
   end
 
-  def for(resource)
+  def for(_resource)
     @searchables
   end
 end
