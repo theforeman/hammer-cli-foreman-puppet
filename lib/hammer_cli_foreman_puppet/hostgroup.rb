@@ -1,10 +1,10 @@
 require 'hammer_cli_foreman/hostgroup'
-require 'hammer_cli_foreman_puppet/command_extensions/hostgroup.rb'
+require 'hammer_cli_foreman_puppet/command_extensions/hostgroup'
 
 module HammerCLIForemanPuppet
   class Hostgroup < HammerCLIForemanPuppet::Command
     class PuppetClassesCommand < HammerCLIForemanPuppet::ListCommand
-      command_name "puppet-classes"
+      command_name 'puppet-classes'
       resource :puppetclasses
 
       output HammerCLIForemanPuppet::PuppetClass::ListCommand.output_definition
@@ -21,7 +21,7 @@ module HammerCLIForemanPuppet
 
     class PuppetSCParamsCommand < HammerCLIForemanPuppet::SmartClassParametersList
       build_options_for :hostgroups
-      command_name "sc-params"
+      command_name 'sc-params'
 
       def validate_options
         super
@@ -31,15 +31,15 @@ module HammerCLIForemanPuppet
 
     class ListCommand < HammerCLIForemanPuppet::InfoCommand
       output do
-        field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
+        field nil, _('Puppet Environment'), Fields::SingleReference, key: :environment
       end
     end
 
     class InfoCommand < HammerCLIForemanPuppet::InfoCommand
       output do
-        field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
-        field nil, _("Puppet CA Proxy"), Fields::SingleReference, :key => :puppet_ca_proxy
-        field nil, _("Puppet Master Proxy"), Fields::SingleReference, :key => :puppet_proxy
+        field nil, _('Puppet Environment'), Fields::SingleReference, key: :environment
+        field nil, _('Puppet CA Proxy'), Fields::SingleReference, key: :puppet_ca_proxy
+        field nil, _('Puppet Master Proxy'), Fields::SingleReference, key: :puppet_proxy
         HammerCLIForemanPuppet::PuppetReferences.puppetclasses(self)
       end
     end
@@ -69,6 +69,6 @@ module HammerCLIForemanPuppet
   HammerCLIForeman::Hostgroup::ListCommand.extend_with(
     HammerCLIForemanPuppet::CommandExtensions::HostgroupList.new
   )
-  # TODO - adding puppet class options
+  # TODO: - adding puppet class options
   # TODO - resolver
 end

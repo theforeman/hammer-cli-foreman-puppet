@@ -34,11 +34,11 @@ describe 'sc-params add-matcher' do
 
   def api_expects_parameter_search(puppet_class, parameter)
     api_expects(:puppetclasses, :index, 'Find puppet class') do |par|
-      par[:search] == %Q(name = "#{puppet_class['name']}")
+      par[:search] == %(name = "#{puppet_class['name']}")
     end.returns(index_response('motd' => [puppet_class]))
 
     api_expects(:smart_class_parameters, :index, 'Find smart parameter') do |par|
-      par[:search] == %Q(key = "#{parameter['name']}") &&
+      par[:search] == %(key = "#{parameter['name']}") &&
         par[:puppetclass_id] == puppet_class['id']
     end.returns(index_response([parameter]))
   end
@@ -53,7 +53,7 @@ describe 'sc-params add-matcher' do
       smart_class_parameter_id: parameter['id'],
       override_value: {
         match: match,
-        value: override_value
+        value: override_value,
       }
     )
 
@@ -72,7 +72,7 @@ describe 'sc-params add-matcher' do
       override_value: {
         match: match,
         value: override_value,
-        omit: false
+        omit: false,
       }
     )
 

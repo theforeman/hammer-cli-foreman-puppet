@@ -30,7 +30,7 @@ class IdResolverTestProxy
     @original_resolver.api.resources.each do |resource|
       method_name = "#{resource.singular_name}_id"
       self.class.send(:define_method, method_name) do |options|
-        value = options[HammerCLI.option_accessor_name("id")]
+        value = options[HammerCLI.option_accessor_name('id')]
         value ||= HammerCLI::NilValue if searchables(resource).any? do |s|
           options[HammerCLI.option_accessor_name(s.name)] == HammerCLI::NilValue
         end
@@ -64,16 +64,16 @@ module CommandTestHelper
 
   module ClassMethods
     def with_params(params, &block)
-      context "with params " + params.to_s do
+      context 'with params ' + params.to_s do
         let(:with_params) { params }
-        self.instance_eval &block
+        instance_eval &block
       end
     end
 
     def it_should_call_action(action, params, headers = {})
-      it "should call action " + action.to_s do
+      it 'should call action ' + action.to_s do
         arguments ||= respond_to?(:with_params) ? with_params : []
-        ApipieBindings::API.any_instance.expects(:call).with() do |r, a, p, h, o|
+        ApipieBindings::API.any_instance.expects(:call).with do |r, a, p, h, o|
           (r == cmd.resource.name && a == action && p == params && h == headers)
         end
         cmd.run(arguments)
@@ -81,9 +81,9 @@ module CommandTestHelper
     end
 
     def it_should_call_action_and_test_params(action, &block)
-      it "should call action " + action.to_s do
+      it 'should call action ' + action.to_s do
         arguments ||= respond_to?(:with_params) ? with_params : []
-        ApipieBindings::API.any_instance.expects(:call).with() do |r, a, p, h, o|
+        ApipieBindings::API.any_instance.expects(:call).with do |r, a, p, h, o|
           (r == cmd.resource.name && a == action && yield(p))
         end
         cmd.run(arguments)
@@ -91,13 +91,13 @@ module CommandTestHelper
     end
 
     def it_should_fail_with(message, arguments = [])
-      it "should fail with " + message.to_s do
+      it 'should fail with ' + message.to_s do
         _(cmd.run(arguments)).must_equal HammerCLI::EX_USAGE
       end
     end
 
     def it_should_accept(message, arguments = [])
-      it "should accept " + message.to_s do
+      it 'should accept ' + message.to_s do
         out, err = capture_io do
           _(cmd.run(arguments)).must_equal HammerCLI::EX_OK
         end
@@ -107,7 +107,7 @@ module CommandTestHelper
     def it_should_output(message, adapter = :base)
       it "should output '" + message.to_s + "'" do
         arguments ||= respond_to?(:with_params) ? with_params : []
-        cmd.stubs(:context).returns(ctx.update(:adapter => adapter))
+        cmd.stubs(:context).returns(ctx.update(adapter: adapter))
         out, err = capture_io do
           cmd.run(arguments)
         end
@@ -116,10 +116,10 @@ module CommandTestHelper
     end
 
     def it_should_print_column(column_name, arguments = nil)
-      it "should print column " + column_name do
+      it 'should print column ' + column_name do
         arguments ||= respond_to?(:with_params) ? with_params : []
 
-        cmd.stubs(:context).returns(ctx.update(:adapter => :test))
+        cmd.stubs(:context).returns(ctx.update(adapter: :test))
         out, err = capture_io do
           cmd.run(arguments)
         end
@@ -135,11 +135,15 @@ module CommandTestHelper
     end
 
     def it_should_print_n_records(count = nil, arguments = nil)
-      it "should print correct count of records" do
+      it 'should print correct count of records' do
         arguments ||= respond_to?(:with_params) ? with_params : []
 
-        cmd.stubs(:context).returns(ctx.update(:adapter => :test))
-        count ||= expected_record_count rescue 0
+        cmd.stubs(:context).returns(ctx.update(adapter: :test))
+        count ||= begin
+                    expected_record_count
+                  rescue StandardError
+                    0
+                  end
         out, err = capture_io do
           cmd.run(arguments)
         end
@@ -148,10 +152,10 @@ module CommandTestHelper
     end
 
     def it_should_accept_search_params
-      it_should_accept "search", ["--search=some_search"]
-      it_should_accept "per page", ["--per-page=1"]
-      it_should_accept "page", ["--page=2"]
-      it_should_accept "order", ["--order=order"]
+      it_should_accept 'search', ['--search=some_search']
+      it_should_accept 'per page', ['--per-page=1']
+      it_should_accept 'page', ['--page=2']
+      it_should_accept 'order', ['--order=order']
     end
   end
 end

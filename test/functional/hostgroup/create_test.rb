@@ -28,52 +28,52 @@ module HammerCLIForemanPuppet
 
       it 'allows puppet ca proxy id' do
         api_expects(:hostgroups, :create).with_params({
-          :hostgroup => {
-            :name => 'hg1',
-            :puppet_ca_proxy_id => 1
-          }
+          hostgroup: {
+            name: 'hg1',
+            puppet_ca_proxy_id: 1,
+          },
         })
-        run_cmd(%w(hostgroup create --name hg1 --puppet-ca-proxy-id 1))
+        run_cmd(%w[hostgroup create --name hg1 --puppet-ca-proxy-id 1])
       end
 
       it 'allows puppet ca proxy name' do
         api_expects(:smart_proxies, :index) do |p|
-          p[:search] = "name = \"sp1\""
+          p[:search] = 'name = "sp1"'
         end.returns(index_response([{ 'id' => 1 }]))
         api_expects(:hostgroups, :create) do |p|
           p['hostgroup']['puppet_ca_proxy_id'] == 1 &&
             p['hostgroup']['name'] == 'hg1'
         end
-        run_cmd(%w(hostgroup create --name hg1 --puppet-ca-proxy sp1))
+        run_cmd(%w[hostgroup create --name hg1 --puppet-ca-proxy sp1])
       end
 
       it 'allows puppet class ids' do
         api_expects(:hostgroups, :create) do |p|
-          p['hostgroup']['puppetclass_ids'] == ['1', '2'] &&
+          p['hostgroup']['puppetclass_ids'] == %w[1 2] &&
             p['hostgroup']['name'] == 'hg1'
         end
-        run_cmd(%w(hostgroup create --name hg1 --puppet-class-ids 1,2))
+        run_cmd(%w[hostgroup create --name hg1 --puppet-class-ids 1,2])
       end
 
       it 'allows puppet class names' do
         api_expects(:puppetclasses, :index) do |p|
-          p[:search] = "name = \"pc1\" or name = \"pc2\""
+          p[:search] = 'name = "pc1" or name = "pc2"'
         end.returns(index_response('puppetclasses' => [
                                      { 'id' => 1, 'name' => 'pc1' },
-                                     { 'id' => 2, 'name' => 'pc2' }
+                                     { 'id' => 2, 'name' => 'pc2' },
                                    ]))
         # FIXME: Called twice because of puppetclass_ids being mentioned twice in the docs
         api_expects(:puppetclasses, :index) do |p|
-          p[:search] = "name = \"pc1\" or name = \"pc2\""
+          p[:search] = 'name = "pc1" or name = "pc2"'
         end.returns(index_response('puppetclasses' => [
                                      { 'id' => 1, 'name' => 'pc1' },
-                                     { 'id' => 2, 'name' => 'pc2' }
+                                     { 'id' => 2, 'name' => 'pc2' },
                                    ]))
         api_expects(:hostgroups, :create) do |p|
           p['hostgroup']['puppetclass_ids'] == [1, 2] &&
             p['hostgroup']['name'] == 'hg1'
         end
-        run_cmd(%w(hostgroup create --name hg1 --puppet-classes pc1,pc2))
+        run_cmd(%w[hostgroup create --name hg1 --puppet-classes pc1,pc2])
       end
 
       it 'allows puppet class names that exceeds entries_per_page' do
@@ -128,23 +128,23 @@ module HammerCLIForemanPuppet
 
       it 'allows puppet proxy id' do
         api_expects(:hostgroups, :create).with_params({
-          :hostgroup => {
-            :name => 'hg1',
-            :puppet_proxy_id => 1
-          }
+          hostgroup: {
+            name: 'hg1',
+            puppet_proxy_id: 1,
+          },
         })
-        run_cmd(%w(hostgroup create --name hg1 --puppet-proxy-id 1))
+        run_cmd(%w[hostgroup create --name hg1 --puppet-proxy-id 1])
       end
 
       it 'allows puppet proxy name' do
         api_expects(:smart_proxies, :index) do |p|
-          p[:search] = "name = \"sp1\""
+          p[:search] = 'name = "sp1"'
         end.returns(index_response([{ 'id' => 1 }]))
         api_expects(:hostgroups, :create) do |p|
           p['hostgroup']['puppet_proxy_id'] == 1 &&
             p['hostgroup']['name'] == 'hg1'
         end
-        run_cmd(%w(hostgroup create --name hg1 --puppet-proxy sp1))
+        run_cmd(%w[hostgroup create --name hg1 --puppet-proxy sp1])
       end
     end
   end

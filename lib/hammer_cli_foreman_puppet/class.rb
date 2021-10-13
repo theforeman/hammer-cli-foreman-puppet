@@ -4,8 +4,8 @@ module HammerCLIForemanPuppet
 
     class ListCommand < HammerCLIForemanPuppet::ListCommand
       output do
-        field :id, _("Id")
-        field :name, _("Name")
+        field :id, _('Id')
+        field :name, _('Name')
       end
 
       def send_request
@@ -15,7 +15,7 @@ module HammerCLIForemanPuppet
       def self.unhash_classes(classes)
         clss = classes.first.inject([]) { |list, (pp_module, pp_module_classes)| list + pp_module_classes }
 
-        HammerCLI::Output::RecordCollection.new(clss, :meta => classes.meta)
+        HammerCLI::Output::RecordCollection.new(clss, meta: classes.meta)
       end
 
       build_options
@@ -25,8 +25,8 @@ module HammerCLIForemanPuppet
 
     class InfoCommand < HammerCLIForemanPuppet::InfoCommand
       output ListCommand.output_definition do
-        collection :smart_class_parameters, _('Smart class parameters'), :numbered => false do
-          custom_field Fields::Reference, :name_key => :parameter
+        collection :smart_class_parameters, _('Smart class parameters'), numbered: false do
+          custom_field Fields::Reference, name_key: :parameter
         end
         HammerCLIForeman::References.hostgroups(self)
         HammerCLIForemanPuppet::PuppetReferences.environments(self)

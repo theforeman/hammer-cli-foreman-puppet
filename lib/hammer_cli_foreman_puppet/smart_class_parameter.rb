@@ -4,11 +4,11 @@ module HammerCLIForemanPuppet
     command_name 'sc-params'
 
     output do
-      field :id, _("Id")
+      field :id, _('Id')
 
-      field :parameter, _("Parameter")
-      field :default_value, _("Default Value")
-      field :override, _("Override")
+      field :parameter, _('Parameter')
+      field :default_value, _('Default Value')
+      field :override, _('Override')
     end
 
     def send_request
@@ -16,22 +16,22 @@ module HammerCLIForemanPuppet
       # FIXME: API returns doubled records, probably just if filtered by puppetclasses
       # it seems group by environment is missing
       # having the uniq to fix that
-      HammerCLI::Output::RecordCollection.new(res.uniq, :meta => res.meta)
+      HammerCLI::Output::RecordCollection.new(res.uniq, meta: res.meta)
     end
 
     def self.build_options_for(resource)
       options = {}
-      options[:without] = [:host_id, :puppetclass_id, :environment_id, :hostgroup_id]
+      options[:without] = %i[host_id puppetclass_id environment_id hostgroup_id]
       options[:expand] = {}
-      options[:expand][:except] = ([:hosts, :puppetclasses, :environments, :hostgroups] - [resource])
+      options[:expand][:except] = (%i[hosts puppetclasses environments hostgroups] - [resource])
       build_options(options)
     end
   end
 
   class SmartClassParametersList < SmartClassParametersBriefList
     output do
-      field :puppetclass_name, _("Puppet class")
-      field :puppetclass_id, _("Class Id"), Fields::Id
+      field :puppetclass_name, _('Puppet class')
+      field :puppetclass_id, _('Class Id'), Fields::Id
     end
   end
 
@@ -53,23 +53,23 @@ module HammerCLIForemanPuppet
 
     class InfoCommand < HammerCLIForemanPuppet::InfoCommand
       output ListCommand.output_definition do
-        field :description, _("Description")
-        field :parameter_type, _("Type")
-        field :hidden_value?, _("Hidden Value?")
-        field :omit, _("Omit"), Fields::Boolean
-        field :required, _("Required")
+        field :description, _('Description')
+        field :parameter_type, _('Type')
+        field :hidden_value?, _('Hidden Value?')
+        field :omit, _('Omit'), Fields::Boolean
+        field :required, _('Required')
 
-        label _("Validator") do
-          field :validator_type, _("Type")
-          field :validator_rule, _("Rule")
+        label _('Validator') do
+          field :validator_type, _('Type')
+          field :validator_rule, _('Rule')
         end
-        label _("Override values") do
-          field :merge_overrides, _("Merge overrides"), Fields::Boolean
-          field :merge_default, _("Merge default value"), Fields::Boolean
-          field :avoid_duplicates, _("Avoid duplicates"), Fields::Boolean
-          field :override_value_order, _("Order"), Fields::LongText
+        label _('Override values') do
+          field :merge_overrides, _('Merge overrides'), Fields::Boolean
+          field :merge_default, _('Merge default value'), Fields::Boolean
+          field :avoid_duplicates, _('Avoid duplicates'), Fields::Boolean
+          field :override_value_order, _('Order'), Fields::LongText
 
-          collection :override_values, _("Values") do
+          collection :override_values, _('Values') do
             field :id, _('Id')
             field :match, _('Match')
             field :value, _('Value')
@@ -91,9 +91,7 @@ module HammerCLIForemanPuppet
       end
 
       validate_options do
-        if option(:option_name).exist?
-          any(:option_puppetclass_name, :option_puppetclass_id).required
-        end
+        any(:option_puppetclass_name, :option_puppetclass_id).required if option(:option_name).exist?
       end
     end
 
@@ -108,23 +106,21 @@ module HammerCLIForemanPuppet
         options.without(:parameter_type, :validator_type, :override, :required, :override_value_order)
       end
 
-      option "--override", "OVERRIDE", _("Override this parameter"),
-        :format => HammerCLI::Options::Normalizers::Bool.new
-      option "--required", "REQUIRED", _("This parameter is required"),
-        :format => HammerCLI::Options::Normalizers::Bool.new
-      option "--parameter-type", "PARAMETER_TYPE", _("Type of the parameter"),
-        :format => HammerCLI::Options::Normalizers::Enum.new(
-          ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json']
+      option '--override', 'OVERRIDE', _('Override this parameter'),
+        format: HammerCLI::Options::Normalizers::Bool.new
+      option '--required', 'REQUIRED', _('This parameter is required'),
+        format: HammerCLI::Options::Normalizers::Bool.new
+      option '--parameter-type', 'PARAMETER_TYPE', _('Type of the parameter'),
+        format: HammerCLI::Options::Normalizers::Enum.new(
+          %w[string boolean integer real array hash yaml json]
         )
-      option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator"),
-        :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
-      option "--override-value-order", "OVERRIDE_VALUE_ORDER", _("The order in which values are resolved"),
-        :format => HammerCLI::Options::Normalizers::List.new
+      option '--validator-type', 'VALIDATOR_TYPE', _('Type of the validator'),
+        format: HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
+      option '--override-value-order', 'OVERRIDE_VALUE_ORDER', _('The order in which values are resolved'),
+        format: HammerCLI::Options::Normalizers::List.new
 
       validate_options do
-        if option(:option_name).exist?
-          any(:option_puppetclass_name, :option_puppetclass_id).required
-        end
+        any(:option_puppetclass_name, :option_puppetclass_id).required if option(:option_name).exist?
       end
 
       def request_params
@@ -141,21 +137,17 @@ module HammerCLIForemanPuppet
 
       option '--value', 'VALUE', _('Override value, required if omit is false')
 
-      success_message _("Override value created.")
-      failure_message _("Could not create the override value")
+      success_message _('Override value created.')
+      failure_message _('Could not create the override value')
 
       build_options do |options|
         options.expand.including(:puppetclasses)
       end
 
       validate_options do
-        if option(:option_omit).value
-          option(:option_value).rejected(:msg => _('Cannot use --value when --omit is true.'))
-        end
+        option(:option_value).rejected(msg: _('Cannot use --value when --omit is true.')) if option(:option_omit).value
 
-        if option(:option_smart_class_parameter_name).exist?
-          any(:option_puppetclass_name, :option_puppetclass_id).required
-        end
+        any(:option_puppetclass_name, :option_puppetclass_id).required if option(:option_smart_class_parameter_name).exist?
       end
     end
 
@@ -163,17 +155,15 @@ module HammerCLIForemanPuppet
       resource :override_values
       command_name 'remove-matcher'
 
-      success_message _("Override value deleted.")
-      failure_message _("Could not delete the override value")
+      success_message _('Override value deleted.')
+      failure_message _('Could not delete the override value')
 
       build_options do |options|
         options.expand.including(:puppetclasses)
       end
 
       validate_options do
-        if option(:option_smart_class_parameter_name).exist?
-          any(:option_puppetclass_name, :option_puppetclass_id).required
-        end
+        any(:option_puppetclass_name, :option_puppetclass_id).required if option(:option_smart_class_parameter_name).exist?
       end
     end
 

@@ -1,14 +1,14 @@
 module HammerCLIForemanPuppet
   RESOURCE_NAME_MAPPING = {
-    :puppetclass => :puppet_class,
-    :puppetclasses => :puppet_classes,
-    :environment => :puppet_environment,
-    :environments => :puppet_environments
+    puppetclass: :puppet_class,
+    puppetclasses: :puppet_classes,
+    environment: :puppet_environment,
+    environments: :puppet_environments,
   }.freeze
 
   RESOURCE_ALIAS_NAME_MAPPING = {
     environment: :puppet_environment,
-    environments: :puppet_environments
+    environments: :puppet_environments,
   }.freeze
 
   module ResolverCommons
@@ -19,9 +19,9 @@ module HammerCLIForemanPuppet
     module ClassMethods
       def api_connection
         if HammerCLI.context[:api_connection]
-          HammerCLI.context[:api_connection].get("foreman")
+          HammerCLI.context[:api_connection].get('foreman')
         else
-          HammerCLI::Connection.get("foreman").api
+          HammerCLI::Connection.get('foreman').api
         end
       end
 

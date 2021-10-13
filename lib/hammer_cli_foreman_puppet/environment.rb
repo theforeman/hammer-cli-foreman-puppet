@@ -25,24 +25,24 @@ module HammerCLIForemanPuppet
 
     class CreateCommand < HammerCLIForemanPuppet::CreateCommand
       include EnvironmentNameMapping
-      success_message _("Environment created.")
-      failure_message _("Could not create the environment")
+      success_message _('Environment created.')
+      failure_message _('Could not create the environment')
 
       build_options
     end
 
     class UpdateCommand < HammerCLIForemanPuppet::UpdateCommand
       include EnvironmentNameMapping
-      success_message _("Environment updated.")
-      failure_message _("Could not update the environment")
+      success_message _('Environment updated.')
+      failure_message _('Could not update the environment')
 
       build_options
     end
 
     class DeleteCommand < HammerCLIForemanPuppet::DeleteCommand
       include EnvironmentNameMapping
-      success_message _("Environment deleted.")
-      failure_message _("Could not delete the environment")
+      success_message _('Environment deleted.')
+      failure_message _('Could not delete the environment')
 
       build_options
     end

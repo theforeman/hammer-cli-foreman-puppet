@@ -17,7 +17,7 @@ describe 'config_group' do
 
       output = IndexMatcher.new([
                                   %w[ID NAME],
-                                  %w[1 config-group-test]
+                                  %w[1 config-group-test],
                                 ])
       expected_result = success_result(output)
 

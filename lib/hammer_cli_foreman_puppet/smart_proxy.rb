@@ -5,24 +5,24 @@ module HammerCLIForemanPuppet
     resource :smart_proxies
     action :import_puppetclasses
 
-    command_name "import-classes"
-    desc _("Import Puppet classes from Puppet proxy")
-    option "--dryrun", :flag, _("Do not run the import")
+    command_name 'import-classes'
+    desc _('Import Puppet classes from Puppet proxy')
+    option '--dryrun', :flag, _('Do not run the import')
 
     output do
-      field :message, _("Result"), Fields::LongText
-      collection :results, _("Changed environments"), :hide_blank => true do
+      field :message, _('Result'), Fields::LongText
+      collection :results, _('Changed environments'), hide_blank: true do
         field :name, nil
-        collection :new_puppetclasses, _("New classes"), :hide_blank => true, :numbered => false do
+        collection :new_puppetclasses, _('New classes'), hide_blank: true, numbered: false do
           field nil, nil
         end
-        collection :updated_puppetclasses, _("Updated classes"), :hide_blank => true, :numbered => false do
+        collection :updated_puppetclasses, _('Updated classes'), hide_blank: true, numbered: false do
           field nil, nil
         end
-        collection :obsolete_puppetclasses, _("Removed classes"), :hide_blank => true, :numbered => false do
+        collection :obsolete_puppetclasses, _('Removed classes'), hide_blank: true, numbered: false do
           field nil, nil
         end
-        collection :ignored_puppetclasses, _("Ignored classes"), :hide_blank => true, :numbered => false do
+        collection :ignored_puppetclasses, _('Ignored classes'), hide_blank: true, numbered: false do
           field nil, nil
         end
       end

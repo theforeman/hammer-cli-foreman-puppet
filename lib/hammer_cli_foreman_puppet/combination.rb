@@ -5,7 +5,7 @@ module HammerCLIForemanPuppet
   class Combination < HammerCLIForemanPuppet::Command
     class ListCommand < HammerCLIForemanPuppet::ListCommand
       output do
-        field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
+        field nil, _('Puppet Environment'), Fields::SingleReference, key: :environment
       end
     end
 

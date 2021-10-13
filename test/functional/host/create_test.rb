@@ -37,8 +37,8 @@ module HammerCLIForemanPuppet
           {
             host: {
               name: 'hst1',
-              puppet_ca_proxy_id: 1
-            }
+              puppet_ca_proxy_id: 1,
+            },
           }
         )
         run_cmd(cmd + minimal_params_without_hostgroup + params)
@@ -71,14 +71,14 @@ module HammerCLIForemanPuppet
           p[:search] = 'name = "pc1" or name = "pc2"'
         end.returns(index_response('puppetclasses' => [
                                      { 'id' => 1, 'name' => 'pc1' },
-                                     { 'id' => 2, 'name' => 'pc2' }
+                                     { 'id' => 2, 'name' => 'pc2' },
                                    ]))
         # FIXME: Called twice because of puppetclass_ids being mentioned twice in the docs
         api_expects(:puppetclasses, :index) do |p|
           p[:search] = 'name = "pc1" or name = "pc2"'
         end.returns(index_response('puppetclasses' => [
                                      { 'id' => 1, 'name' => 'pc1' },
-                                     { 'id' => 2, 'name' => 'pc2' }
+                                     { 'id' => 2, 'name' => 'pc2' },
                                    ]))
         api_expects(:hosts, :create) do |p|
           p['host']['puppetclass_ids'] == [1, 2] &&
@@ -143,8 +143,8 @@ module HammerCLIForemanPuppet
           {
             host: {
               name: 'hst1',
-              puppet_proxy_id: 1
-            }
+              puppet_proxy_id: 1,
+            },
           }
         )
         run_cmd(cmd + minimal_params_without_hostgroup + params)

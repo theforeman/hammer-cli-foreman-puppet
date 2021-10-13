@@ -2,7 +2,7 @@ module HammerCLIForemanPuppet
   module PuppetReferences
     def self.puppetclasses(dsl)
       dsl.build do
-        collection :puppetclasses, _("Puppetclasses"), :numbered => false do
+        collection :puppetclasses, _('Puppetclasses'), numbered: false do
           custom_field Fields::Reference
         end
       end
@@ -10,7 +10,7 @@ module HammerCLIForemanPuppet
 
     def self.environments(dsl)
       dsl.build do
-        collection :environments, _("Environments"), :numbered => false do
+        collection :environments, _('Environments'), numbered: false do
           custom_field Fields::Reference
         end
       end

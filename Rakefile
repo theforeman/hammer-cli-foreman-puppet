@@ -7,7 +7,7 @@ Rake::TestTask.new do |t|
   t.verbose = true
 end
 
-task :default => :test
+task default: :test
 
 require 'hammer_cli_foreman_puppet/version'
 require 'hammer_cli_foreman_puppet/i18n'

@@ -7,7 +7,7 @@ module HammerCLIForemanPuppet
   class Host < HammerCLIForemanPuppet::Command
     class PuppetClassesCommand < HammerCLIForemanPuppet::ListCommand
       include EnvironmentNameMapping
-      command_name "puppet-classes"
+      command_name 'puppet-classes'
       resource :puppetclasses
 
       output HammerCLIForemanPuppet::PuppetClass::ListCommand.output_definition
@@ -24,7 +24,7 @@ module HammerCLIForemanPuppet
 
     class SCParamsCommand < HammerCLIForemanPuppet::SmartClassParametersList
       build_options_for :hosts
-      command_name "sc-params"
+      command_name 'sc-params'
 
       def validate_options
         super
@@ -35,9 +35,9 @@ module HammerCLIForemanPuppet
     class InfoCommand < HammerCLIForemanPuppet::InfoCommand
       include EnvironmentNameMapping
       output do
-        field nil, _("Puppet Environment"), Fields::SingleReference, :key => :environment
-        field nil, _("Puppet CA Proxy"), Fields::SingleReference, :key => :puppet_ca_proxy
-        field nil, _("Puppet Master Proxy"), Fields::SingleReference, :key => :puppet_proxy
+        field nil, _('Puppet Environment'), Fields::SingleReference, key: :environment
+        field nil, _('Puppet CA Proxy'), Fields::SingleReference, key: :puppet_ca_proxy
+        field nil, _('Puppet Master Proxy'), Fields::SingleReference, key: :puppet_proxy
       end
     end
   end
