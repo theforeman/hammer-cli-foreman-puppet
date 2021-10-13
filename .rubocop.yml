@@ -1,0 +1,32 @@
+inherit_gem:
+  theforeman-rubocop:
+    - strictest.yml
+
+inherit_from: .rubocop_todo.yml
+
+Layout/LineLength:
+  Max: 130
+  Exclude:
+    - 'test/**/*'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'test/**/*'
+
+Style/MixinUsage:
+  Exclude:
+    - 'test/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'test/**/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'test/**/*'
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'lib/hammer_cli_foreman_puppet/id_resolver.rb'
+    - 'test/**/*'

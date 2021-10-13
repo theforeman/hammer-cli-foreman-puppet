@@ -12,6 +12,8 @@ group :test do
   gem 'simplecov'
 end
 
+gem 'theforeman-rubocop', '~> 0.1.0.pre', groups: %i[development rubocop]
+
 # load local gemfile
 ['Gemfile.local.rb', 'Gemfile.local'].map do |file_name|
   local_gemfile = File.join(File.dirname(__FILE__), file_name)
