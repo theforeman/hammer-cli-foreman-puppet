@@ -14,11 +14,11 @@ module HammerCLIForemanPuppet
       it 'allows environment name' do
         api_expects(:environments, :index) do |p|
           p[:search] = "name = \"env1\""
-        end.returns(index_response([{'id' => 1}]))
+        end.returns(index_response([{ 'id' => 1 }]))
         # FIXME: Called twice because of environment_id being mentioned twice in the docs
         api_expects(:environments, :index) do |p|
           p[:search] = "name = \"env1\""
-        end.returns(index_response([{'id' => 1}]))
+        end.returns(index_response([{ 'id' => 1 }]))
         api_expects(:hosts, :update) do |p|
           p['host']['environment_id'] == 1 &&
             p['id'] == '1'
@@ -37,7 +37,7 @@ module HammerCLIForemanPuppet
       it 'allows puppet ca proxy name' do
         api_expects(:smart_proxies, :index) do |p|
           p[:search] = "name = \"sp1\""
-        end.returns(index_response([{'id' => 1}]))
+        end.returns(index_response([{ 'id' => 1 }]))
         api_expects(:hosts, :update) do |p|
           p['host']['puppet_ca_proxy_id'] == 1 &&
             p['id'] == '1'
@@ -47,7 +47,7 @@ module HammerCLIForemanPuppet
 
       it 'allows puppet class ids' do
         api_expects(:hosts, :update) do |p|
-          p['host']['puppetclass_ids'] == ['1','2'] &&
+          p['host']['puppetclass_ids'] == ['1', '2'] &&
             p['id'] == '1'
         end
         run_cmd(%w(host update --id 1 --puppet-class-ids 1,2))
@@ -57,18 +57,18 @@ module HammerCLIForemanPuppet
         api_expects(:puppetclasses, :index) do |p|
           p[:search] = "name = \"pc1\" or name = \"pc2\""
         end.returns(index_response('puppetclasses' => [
-          {'id' => 1, 'name' => 'pc1'},
-          {'id' => 2, 'name' => 'pc2'}
-        ]))
+                                     { 'id' => 1, 'name' => 'pc1' },
+                                     { 'id' => 2, 'name' => 'pc2' }
+                                   ]))
         # FIXME: Called twice because of puppetclass_ids being mentioned twice in the docs
         api_expects(:puppetclasses, :index) do |p|
           p[:search] = "name = \"pc1\" or name = \"pc2\""
         end.returns(index_response('puppetclasses' => [
-          {'id' => 1, 'name' => 'pc1'},
-          {'id' => 2, 'name' => 'pc2'}
-        ]))
+                                     { 'id' => 1, 'name' => 'pc1' },
+                                     { 'id' => 2, 'name' => 'pc2' }
+                                   ]))
         api_expects(:hosts, :update) do |p|
-          p['host']['puppetclass_ids'] == [1,2] &&
+          p['host']['puppetclass_ids'] == [1, 2] &&
             p['id'] == '1'
         end
         run_cmd(%w(host update --id 1 --puppet-classes pc1,pc2))
@@ -85,7 +85,7 @@ module HammerCLIForemanPuppet
       it 'allows puppet proxy name' do
         api_expects(:smart_proxies, :index) do |p|
           p[:search] = "name = \"sp1\""
-        end.returns(index_response([{'id' => 1}]))
+        end.returns(index_response([{ 'id' => 1 }]))
         api_expects(:hosts, :update) do |p|
           p['host']['puppet_proxy_id'] == 1 &&
             p['id'] == '1'

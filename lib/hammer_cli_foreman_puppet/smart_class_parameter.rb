@@ -1,5 +1,4 @@
 module HammerCLIForemanPuppet
-
   class SmartClassParametersBriefList < HammerCLIForemanPuppet::ListCommand
     resource :smart_class_parameters, :index
     command_name 'sc-params'
@@ -115,11 +114,12 @@ module HammerCLIForemanPuppet
         :format => HammerCLI::Options::Normalizers::Bool.new
       option "--parameter-type", "PARAMETER_TYPE", _("Type of the parameter"),
         :format => HammerCLI::Options::Normalizers::Enum.new(
-            ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
+          ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json']
+        )
       option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator"),
         :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
       option "--override-value-order", "OVERRIDE_VALUE_ORDER", _("The order in which values are resolved"),
-             :format => HammerCLI::Options::Normalizers::List.new
+        :format => HammerCLI::Options::Normalizers::List.new
 
       validate_options do
         if option(:option_name).exist?

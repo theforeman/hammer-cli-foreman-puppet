@@ -13,7 +13,7 @@ describe 'proxy' do
         'environments_ignored' => 0,
         'results' => [{
           'name' => 'development',
-          'actions' => [ 'new', 'update' ],
+          'actions' => ['new', 'update'],
           'new_puppetclasses' => [
             'motd',
             'hammer'
@@ -22,9 +22,9 @@ describe 'proxy' do
             'stdlib',
             'vim'
           ]
-        },{
+        }, {
           'name' => 'production',
-          'actions' => [ 'obsolete', 'ignore' ],
+          'actions' => ['obsolete', 'ignore'],
           'obsolete_puppetclasses' => [
             'apache'
           ],
@@ -46,22 +46,22 @@ describe 'proxy' do
         .returns(report)
 
       output = OutputMatcher.new([
-        'Result:',
-        '  Successfully updated environment and puppetclasses from the on-disk puppet installation',
-        'Changed environments:',
-        ' 1) development',
-        '    New classes:',
-        '        motd',
-        '        hammer',
-        '    Updated classes:',
-        '        stdlib',
-        '        vim',
-        ' 2) production',
-        '    Removed classes:',
-        '        apache',
-        '    Ignored classes:',
-        '        hammer'
-      ])
+                                   'Result:',
+                                   '  Successfully updated environment and puppetclasses from the on-disk puppet installation',
+                                   'Changed environments:',
+                                   ' 1) development',
+                                   '    New classes:',
+                                   '        motd',
+                                   '        hammer',
+                                   '    Updated classes:',
+                                   '        stdlib',
+                                   '        vim',
+                                   ' 2) production',
+                                   '    Removed classes:',
+                                   '        apache',
+                                   '    Ignored classes:',
+                                   '        hammer'
+                                 ])
       expected_result = success_result(output)
 
       result = run_cmd(cmd + params)
@@ -74,9 +74,9 @@ describe 'proxy' do
         .returns(no_change_report)
 
       output = OutputMatcher.new([
-        'Result:',
-        '  No changes to your environments detected'
-      ])
+                                   'Result:',
+                                   '  No changes to your environments detected'
+                                 ])
       expected_result = success_result(output)
 
       result = run_cmd(cmd + params)

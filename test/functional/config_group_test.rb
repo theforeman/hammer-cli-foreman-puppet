@@ -7,9 +7,9 @@ describe 'config_group' do
     before do
       @cmd = %w[config-group list]
       @config_groups = [{
-                          id: 1,
-                          name: 'config-group-test',
-                        }]
+        id: 1,
+        name: 'config-group-test',
+      }]
     end
 
     it 'should return a list of config groups' do

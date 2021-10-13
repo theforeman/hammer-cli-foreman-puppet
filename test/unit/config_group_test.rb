@@ -52,7 +52,7 @@ describe HammerCLIForemanPuppet::ConfigGroup do
 
     context "parameters" do
       it_should_accept 'name, puppetclass ids, location, organization',
-                       %w[--name=first_group --puppet-class-ids=1,2 --location-id=1 --organization-id=1]
+        %w[--name=first_group --puppet-class-ids=1,2 --location-id=1 --organization-id=1]
     end
   end
 
@@ -68,7 +68,6 @@ describe HammerCLIForemanPuppet::ConfigGroup do
   end
 
   context "UpdateCommand" do
-
     let(:cmd) { HammerCLIForemanPuppet::ConfigGroup::UpdateCommand.new("", ctx) }
 
     context "parameters" do

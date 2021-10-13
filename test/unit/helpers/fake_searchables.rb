@@ -1,7 +1,4 @@
-
-
 class FakeSearchables
-
   def initialize(searchable_fields, editable_fields = [])
     @searchables = []
     @searchables += searchable_fields.collect do |name|
@@ -15,5 +12,4 @@ class FakeSearchables
   def for(resource)
     @searchables
   end
-
 end

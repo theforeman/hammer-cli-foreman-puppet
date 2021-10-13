@@ -1,6 +1,5 @@
 module ResourceMocks
-
-  def self.mock_action_call(resource, action, value, params=:default)
+  def self.mock_action_call(resource, action, value, params = :default)
     response = ApipieBindings::Example.new('GET', '/', '', 200, JSON.dump(value))
     @mocks ||= {}
     @mocks[[resource, action]] ||= {}
@@ -21,16 +20,16 @@ module ResourceMocks
 
   def self.smart_class_parameters_index
     ResourceMocks.mock_action_call(:smart_class_parameters, :index,
-      { "results" => [ { 'parameter' => 'config', 'id' => '1'} ] })
+      { "results" => [{ 'parameter' => 'config', 'id' => '1' }] })
   end
 
   def self.smart_class_parameters_show
-    ResourceMocks.mock_action_call(:smart_class_parameters, :show, { 'smart_class_parameter' => { 'override_value_order' => '', 'environments' => [] }})
+    ResourceMocks.mock_action_call(:smart_class_parameters, :show, { 'smart_class_parameter' => { 'override_value_order' => '', 'environments' => [] } })
   end
 
   def self.smart_variables_index
     ResourceMocks.mock_action_call(:smart_variables, :index,
-      { "results" => [ { 'variable' => 'var', 'id' => '1'} ] })
+      { "results" => [{ 'variable' => 'var', 'id' => '1' }] })
   end
 
   def self.smart_variables_show
@@ -39,14 +38,15 @@ module ResourceMocks
 
   def self.organizations_index
     ResourceMocks.mock_action_call(:organizations, :index, {
-     "results" => [
+      "results" => [
         {
-                 "label" => "Default_Organization",
-                    "id" => 1,
-                  "name" => "Default_Organization",
-                 "title" => "Default_Organization"
+          "label" => "Default_Organization",
+          "id" => 1,
+          "name" => "Default_Organization",
+          "title" => "Default_Organization"
         }
-      ]})
+      ]
+    })
   end
 
   def self.hosts_show
@@ -146,41 +146,40 @@ module ResourceMocks
     })
   end
 
-
   def self.organizations_show
     ResourceMocks.mock_action_calls(
       [:organizations, :index, [{ "id" => 2, "name" => "ACME" }]],
       [:organizations, :show, { "id" => 2, "name" => "ACME" }]
-      )
+    )
   end
 
   def self.locations_index
     ResourceMocks.mock_action_call(:locations, :index, {
       "results" => [
         {
-              "ancestry" => nil,
-            "created_at" => "2014-07-17T17:21:49+02:00",
-            "updated_at" => "2015-06-17T13:18:10+02:00",
-                    "id" => 2,
-                  "name" => "Default_Location",
-                 "title" => "Default_Location"
+          "ancestry" => nil,
+          "created_at" => "2014-07-17T17:21:49+02:00",
+          "updated_at" => "2015-06-17T13:18:10+02:00",
+          "id" => 2,
+          "name" => "Default_Location",
+          "title" => "Default_Location"
         }
-      ]})
+      ]
+    })
   end
 
   def self.locations_show
     ResourceMocks.mock_action_calls(
       [:locations, :index, [{ "id" => 2, "name" => "Rack" }]],
       [:locations, :show, { "id" => 2, "name" => "Rack" }]
-      )
+    )
   end
 
   def self.config_groups_index
     ResourceMocks.mock_action_call(:config_groups, :index, [{
       id: 15,
       name: "test config group",
-      puppetclasses: [ { name: "My puppetclass" } ]
+      puppetclasses: [{ name: "My puppetclass" }]
     }])
   end
-
 end

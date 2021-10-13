@@ -7,9 +7,9 @@ module HammerCLIForemanPuppet
     end
 
     class InfoCombination < HammerCLI::CommandExtensions
-        output do |definition|
-          definition.insert(:after, :hostgroup_name, HammerCLIForemanPuppet::Combination::InfoCommand.output_definition.fields)
-        end
+      output do |definition|
+        definition.insert(:after, :hostgroup_name, HammerCLIForemanPuppet::Combination::InfoCommand.output_definition.fields)
       end
+    end
   end
 end

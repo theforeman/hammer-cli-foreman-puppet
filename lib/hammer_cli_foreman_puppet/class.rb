@@ -1,6 +1,5 @@
 module HammerCLIForemanPuppet
   class PuppetClass < HammerCLIForemanPuppet::Command
-
     resource :puppetclasses
 
     class ListCommand < HammerCLIForemanPuppet::ListCommand
@@ -38,7 +37,6 @@ module HammerCLIForemanPuppet
 
       extend_with(HammerCLIForemanPuppet::CommandExtensions::PuppetEnvironment.new)
     end
-
 
     class SCParamsCommand < HammerCLIForemanPuppet::SmartClassParametersBriefList
       build_options_for :puppetclasses

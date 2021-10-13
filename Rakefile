@@ -13,4 +13,4 @@ require 'hammer_cli_foreman_puppet/version'
 require 'hammer_cli_foreman_puppet/i18n'
 require 'hammer_cli/i18n/find_task'
 HammerCLI::I18n::FindTask.define(HammerCLIForemanPuppet::I18n::LocaleDomain.new,
-                                 HammerCLIForemanPuppet.version)
+  HammerCLIForemanPuppet.version)

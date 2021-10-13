@@ -9,7 +9,6 @@ module HammerCLIForemanPuppet
     desc _("Import Puppet classes from Puppet proxy")
     option "--dryrun", :flag, _("Do not run the import")
 
-
     output do
       field :message, _("Result"), Fields::LongText
       collection :results, _("Changed environments"), :hide_blank => true do
@@ -53,6 +52,6 @@ module HammerCLIForemanPuppet
     extend_with(HammerCLIForemanPuppet::CommandExtensions::PuppetEnvironment.new)
   end
   HammerCLIForeman::SmartProxy.subcommand 'import-classes',
-                                           HammerCLIForemanPuppet::ImportPuppetClassesCommand.desc,
-                                           HammerCLIForemanPuppet::ImportPuppetClassesCommand
+    HammerCLIForemanPuppet::ImportPuppetClassesCommand.desc,
+    HammerCLIForemanPuppet::ImportPuppetClassesCommand
 end

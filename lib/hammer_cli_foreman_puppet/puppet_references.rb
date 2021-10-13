@@ -1,6 +1,5 @@
 module HammerCLIForemanPuppet
   module PuppetReferences
-
     def self.puppetclasses(dsl)
       dsl.build do
         collection :puppetclasses, _("Puppetclasses"), :numbered => false do
