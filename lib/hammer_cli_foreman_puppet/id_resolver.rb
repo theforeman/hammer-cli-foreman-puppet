@@ -17,7 +17,7 @@ module HammerCLIForemanPuppet
     def puppetclass_ids(options)
       resource_name = :puppetclasses
       resource = @api.resource(resource_name)
-      results = if (ids = options[HammerCLI.option_accessor_name('ids')])
+      _results = if (ids = options[HammerCLI.option_accessor_name('ids')])
                   ids
                 elsif (ids = nil_from_searchables(resource_name, options, plural: true))
                   ids
