@@ -70,6 +70,6 @@ module HammerCLIForemanPuppet
   HammerCLIForeman::Hostgroup::ListCommand.extend_with(
     HammerCLIForemanPuppet::CommandExtensions::HostgroupList.new
   )
-#TODO - adding puppet class options
-#TODO - resolver
+  #TODO - adding puppet class options
+  #TODO - resolver
 end

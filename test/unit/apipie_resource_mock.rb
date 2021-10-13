@@ -130,16 +130,16 @@ module ResourceMocks
         "provision" => true,
         "type" => "interface"
       },
-      {
-        "id" => 2,
-        "name" => nil,
-        "ip" => "10.34.130.105",
-        "mac" => "52:54:00:f5:1b:57",
-        "identifier" => "eth1",
-        "primary" => false,
-        "provision" => false,
-        "type" => "interface"
-      }],
+                       {
+                         "id" => 2,
+                         "name" => nil,
+                         "ip" => "10.34.130.105",
+                         "mac" => "52:54:00:f5:1b:57",
+                         "identifier" => "eth1",
+                         "primary" => false,
+                         "provision" => false,
+                         "type" => "interface"
+                       }],
       "puppetclasses" => [],
       "config_groups" => [],
       "all_puppetclasses" => []
