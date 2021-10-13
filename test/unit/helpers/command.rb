@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require File.join(File.dirname(__FILE__), '../test_output_adapter')
 
 class IdResolverTestProxy
@@ -141,10 +142,10 @@ module CommandTestHelper
 
         cmd.stubs(:context).returns(ctx.update(adapter: :test))
         count ||= begin
-                    expected_record_count
-                  rescue StandardError
-                    0
-                  end
+          expected_record_count
+        rescue StandardError
+          0
+        end
         out, err = capture_io do
           cmd.run(arguments)
         end

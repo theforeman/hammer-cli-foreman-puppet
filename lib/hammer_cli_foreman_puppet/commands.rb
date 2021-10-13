@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module HammerCLIForemanPuppet
   RESOURCE_NAME_MAPPING = {
     puppetclass: :puppet_class,

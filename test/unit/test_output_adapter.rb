@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'hammer_cli/output/adapter/abstract'
 
 class TestAdapter < HammerCLI::Output::Adapter::Abstract

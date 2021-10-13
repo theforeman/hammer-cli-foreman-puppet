@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'hammer_cli_foreman/smart_proxy'
 
 module HammerCLIForemanPuppet

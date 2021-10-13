@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'hammer_cli_foreman/hostgroup'
 require 'hammer_cli_foreman_puppet/command_extensions/hostgroup'
 

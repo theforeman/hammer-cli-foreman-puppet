@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module HammerCLIForemanPuppet
   module PuppetIdResolver
     # puppet class search results are in non-standard format
@@ -30,8 +31,8 @@ module HammerCLIForemanPuppet
                     resolved_call(resource_name, :index, options, :multi)
                   )
                   if results.count < expected_record_count(
-                      options, resource, :multi
-                    )
+                    options, resource, :multi
+                  )
                     raise HammerCLIForeman::ResolverError.new(_('one of %s not found.') % resource.name,
                       resource)
                   end

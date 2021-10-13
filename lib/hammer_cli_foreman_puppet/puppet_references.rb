@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module HammerCLIForemanPuppet
   module PuppetReferences
     def self.puppetclasses(dsl)

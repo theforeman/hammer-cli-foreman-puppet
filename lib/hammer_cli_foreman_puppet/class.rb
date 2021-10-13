@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module HammerCLIForemanPuppet
   class PuppetClass < HammerCLIForemanPuppet::Command
     resource :puppetclasses

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module HammerCLIForemanPuppet
   module EnvironmentNameMapping
     def self.included(base)
