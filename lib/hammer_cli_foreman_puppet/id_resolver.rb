@@ -18,26 +18,26 @@ module HammerCLIForemanPuppet
       resource_name = :puppetclasses
       resource = @api.resource(resource_name)
       _results = if (ids = options[HammerCLI.option_accessor_name('ids')])
-                  ids
-                elsif (ids = nil_from_searchables(resource_name, options, plural: true))
-                  ids
-                elsif options_not_set?(resource, options)
-                  raise HammerCLIForeman::MissingSearchOptions.new(_('Missing options to search %s') % resource.name, resource)
-                elsif options_empty?(resource, options)
-                  []
-                else
-                  require('hammer_cli_foreman_puppet/class')
-                  results = HammerCLIForemanPuppet::PuppetClass::ListCommand.unhash_classes(
-                    resolved_call(resource_name, :index, options, :multi)
-                  )
-                  if results.count < expected_record_count(
-                    options, resource, :multi
-                  )
-                    raise HammerCLIForeman::ResolverError.new(_('one of %s not found.') % resource.name,
-                      resource)
-                  end
-                  results.map { |r| r['id'] }
-                end
+                   ids
+                 elsif (ids = nil_from_searchables(resource_name, options, plural: true))
+                   ids
+                 elsif options_not_set?(resource, options)
+                   raise HammerCLIForeman::MissingSearchOptions.new(_('Missing options to search %s') % resource.name, resource)
+                 elsif options_empty?(resource, options)
+                   []
+                 else
+                   require('hammer_cli_foreman_puppet/class')
+                   results = HammerCLIForemanPuppet::PuppetClass::ListCommand.unhash_classes(
+                     resolved_call(resource_name, :index, options, :multi)
+                   )
+                   if results.count < expected_record_count(
+                     options, resource, :multi
+                   )
+                     raise HammerCLIForeman::ResolverError.new(_('one of %s not found.') % resource.name,
+                       resource)
+                   end
+                   results.map { |r| r['id'] }
+                 end
     end
 
     def puppet_environment_id(options)
