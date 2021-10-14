@@ -2,13 +2,6 @@ require 'hammer_cli_foreman/organization'
 require 'hammer_cli_foreman_puppet/command_extensions/organization'
 
 module HammerCLIForemanPuppet
-  module OrganizationAddAssociatedCommand
-    def self.included(base)
-      HammerCLIForemanPuppet::AssociatingCommands::PuppetEnvironment.extend_command(base)
-      base.create_subcommand
-    end
-  end
-
   class Organization < HammerCLIForemanPuppet::Command
     class InfoCommand < HammerCLIForemanPuppet::InfoCommand
       output do
@@ -26,9 +19,4 @@ module HammerCLIForemanPuppet
   HammerCLIForeman::Organization::InfoCommand.extend_with(
     HammerCLIForemanPuppet::CommandExtensions::OrganizationInfo.new
   )
-
-  HammerCLIForeman::Organization.class_eval do
-    extend HammerCLIForemanPuppet::AssociatingCommands::ExtendCommands
-    include HammerCLIForemanPuppet::OrganizationAddAssociatedCommand
-  end
 end
