@@ -17,8 +17,12 @@ module HammerCLIForemanPuppet
         child '--puppet-classes', 'PUPPET_CLASS_NAMES', '',
               attribute_name: :option_puppetclass_names
       end
-      option '--puppet-ca-proxy', 'PUPPET_CA_PROXY_NAME', _('Name of Puppet CA proxy')
-      option '--puppet-proxy', 'PUPPET_PROXY_NAME', _('Name of Puppet proxy')
+      option_family associate: 'puppet_proxy' do
+        child '--puppet-proxy', 'PUPPET_PROXY_NAME', _('Name of Puppet proxy')
+      end
+      option_family associate: 'puppet_ca_proxy' do
+        child '--puppet-ca-proxy', 'PUPPET_CA_PROXY_NAME', _('Name of Puppet CA proxy')
+      end
 
       request_params do |params, command_object|
         if command_object.option_puppet_proxy
