@@ -55,11 +55,16 @@ module HammerCLIForemanPuppet
                                           HammerCLIForemanPuppet::Hostgroup::PuppetSCParamsCommand
 
   HammerCLIForeman::Hostgroup::CreateCommand.include(HammerCLIForemanPuppet::EnvironmentNameMapping)
+  # Delete deprecated options explicitly until they are deleted from API
+  HammerCLIForemanPuppet::CommandExtensions::HostPuppetProxy.delete_deprecated_options(HammerCLIForeman::Hostgroup::CreateCommand)
   HammerCLIForeman::Hostgroup::CreateCommand.extend_with(
     HammerCLIForemanPuppet::CommandExtensions::PuppetEnvironment.new,
     HammerCLIForemanPuppet::CommandExtensions::HostgroupPuppetProxy.new
   )
+
   HammerCLIForeman::Hostgroup::UpdateCommand.include(HammerCLIForemanPuppet::EnvironmentNameMapping)
+  # Delete deprecated options explicitly until they are deleted from API
+  HammerCLIForemanPuppet::CommandExtensions::HostPuppetProxy.delete_deprecated_options(HammerCLIForeman::Hostgroup::UpdateCommand)
   HammerCLIForeman::Hostgroup::UpdateCommand.extend_with(
     HammerCLIForemanPuppet::CommandExtensions::PuppetEnvironment.new,
     HammerCLIForemanPuppet::CommandExtensions::HostgroupPuppetProxy.new

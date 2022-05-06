@@ -25,7 +25,7 @@ module HammerCLIForemanPuppet
           p[:search] == 'name = "env1"'
         end.returns(index_response([{ 'id' => 1 }]))
         api_expects(:hosts, :create) do |p|
-          p['host']['environment_id'] == 1 &&
+          p['host']['puppet_attributes']['environment_id'] == 1 &&
             p['host']['name'] == 'hst1'
         end
         run_cmd(cmd + minimal_params_without_hostgroup + params)
@@ -59,7 +59,7 @@ module HammerCLIForemanPuppet
       it 'allows puppet class ids' do
         params = %w[--puppet-class-ids=1,2]
         api_expects(:hosts, :create) do |p|
-          p['host']['puppetclass_ids'] == %w[1 2] &&
+          p['host']['puppet_attributes']['puppetclass_ids'] == %w[1 2] &&
             p['host']['name'] == 'hst1'
         end
         run_cmd(cmd + minimal_params_without_hostgroup + params)
@@ -81,7 +81,7 @@ module HammerCLIForemanPuppet
           {'id' => 2, 'name' => 'pc2'}
         ]))
         api_expects(:hosts, :create) do |p|
-          p['host']['puppetclass_ids'] == [1,2] &&
+          p['host']['puppet_attributes']['puppetclass_ids'] == [1,2] &&
             p['host']['name'] == 'hst1'
         end
         run_cmd(cmd + minimal_params_without_hostgroup + params)
@@ -130,7 +130,7 @@ module HammerCLIForemanPuppet
 
         api_expects(:hosts, :create) do |p|
           p['host']['name'] == 'hst1' &&
-            p['host']['puppetclass_ids'] == ids
+            p['host']['puppet_attributes']['puppetclass_ids'] == ids
         end
         run_cmd(cmd + minimal_params_without_hostgroup + params)
       end
@@ -155,6 +155,37 @@ module HammerCLIForemanPuppet
         end.returns(index_response([{ 'id' => 1 }]))
         api_expects(:hosts, :create) do |p|
           p['host']['puppet_proxy_id'] == 1 &&
+            p['host']['name'] == 'hst1'
+        end
+        run_cmd(cmd + minimal_params_without_hostgroup + params)
+      end
+
+      it 'allows config group ids' do
+        params = %w[--config-group-ids=1,2]
+        api_expects(:hosts, :create) do |p|
+          p['host']['puppet_attributes']['config_group_ids'] == %w[1 2] &&
+            p['host']['name'] == 'hst1'
+        end
+        run_cmd(cmd + minimal_params_without_hostgroup + params)
+      end
+
+      it 'allows config group names' do
+        params = %w[--config-groups=cg1,cg2]
+        api_expects(:config_groups, :index) do |p|
+          p[:search] = 'name = "cg1" or name = "cg2"'
+        end.returns(index_response([
+          {'id' => 1, 'name' => 'cg1'},
+          {'id' => 2, 'name' => 'cg2'}
+        ]))
+        # FIXME: Called twice because of config_group_ids being mentioned twice in the docs
+        api_expects(:config_groups, :index) do |p|
+          p[:search] = 'name = "cg1" or name = "cg2"'
+        end.returns(index_response([
+          {'id' => 1, 'name' => 'cg1'},
+          {'id' => 2, 'name' => 'cg2'}
+        ]))
+        api_expects(:hosts, :create) do |p|
+          p['host']['puppet_attributes']['config_group_ids'] == [1, 2] &&
             p['host']['name'] == 'hst1'
         end
         run_cmd(cmd + minimal_params_without_hostgroup + params)
