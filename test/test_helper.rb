@@ -17,7 +17,7 @@ require "mocha/minitest"
 require 'hammer_cli'
 require 'hammer_cli/testing/command_assertions'
 require 'hammer_cli_foreman/testing/api_expectations'
-FOREMAN_VERSION = Gem::Version.new(ENV['TEST_API_VERSION'] || '3.0')
+FOREMAN_VERSION = Gem::Version.new(ENV['TEST_API_VERSION'] || '3.3')
 
 include HammerCLI::Testing::CommandAssertions
 include HammerCLIForeman::Testing::APIExpectations

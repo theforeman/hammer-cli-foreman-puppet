@@ -16,8 +16,6 @@ describe HammerCLIForemanPuppet::ConfigGroup do
     context "parameters" do
       it_should_accept "no arguments"
       it_should_accept_search_params
-      it_should_accept 'organization', ['--organization-id=1']
-      it_should_accept 'location', ['--location-id=1']
     end
 
     context "output" do
@@ -33,8 +31,6 @@ describe HammerCLIForemanPuppet::ConfigGroup do
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name", ["--name=group_x"]
-      it_should_accept 'organization', %w[--id=1 --organization-id=1]
-      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
 
     context "output" do
@@ -51,8 +47,8 @@ describe HammerCLIForemanPuppet::ConfigGroup do
     let(:cmd) { HammerCLIForemanPuppet::ConfigGroup::CreateCommand.new("", ctx) }
 
     context "parameters" do
-      it_should_accept 'name, puppetclass ids, location, organization',
-                       %w[--name=first_group --puppet-class-ids=1,2 --location-id=1 --organization-id=1]
+      it_should_accept 'name, puppetclass ids',
+                       %w[--name=first_group --puppet-class-ids=1,2]
     end
   end
 
@@ -62,8 +58,6 @@ describe HammerCLIForemanPuppet::ConfigGroup do
     context "parameters" do
       it_should_accept "name", ["--name=group_x"]
       it_should_accept "id", ["--id=1"]
-      it_should_accept 'organization', %w[--id=1 --organization-id=1]
-      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
   end
 
@@ -74,8 +68,6 @@ describe HammerCLIForemanPuppet::ConfigGroup do
     context "parameters" do
       it_should_accept "name", ["--name=group_x"]
       it_should_accept "id", ["--id=1"]
-      it_should_accept 'organization', %w[--id=1 --organization-id=1]
-      it_should_accept 'location', %w[--id=1 --location-id=1]
     end
   end
 end
