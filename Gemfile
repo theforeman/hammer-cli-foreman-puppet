@@ -3,6 +3,8 @@ dev_gemfile = File.expand_path("Gemfile.dev.rb", __dir__)
 eval_gemfile(dev_gemfile) if File.exist?(dev_gemfile)
 gemspec
 
+gem 'gettext', '>= 3.1.3', '< 4.0.0'
+
 group :test do
   gem 'ci_reporter', '>= 1.6.3', '< 2.0.0', :require => false
   gem 'minitest'
