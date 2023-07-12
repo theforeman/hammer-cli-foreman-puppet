@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-foreman-puppet package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2021
+# Bryan Kearney <bryan.kearney@gmail.com>, 2021
+# Transifex Bot <>, 2021
+# Amit Upadhye <aupadhye@redhat.com>, 2022
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-foreman-puppet 0.0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-02 23:05+0530\n"
+"PO-Revision-Date: 2021-08-02 17:36+0000\n"
+"Last-Translator: Amit Upadhye <aupadhye@redhat.com>, 2022\n"
+"Language-Team: Japanese (https://app.transifex.com/foreman/teams/114/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Manage Foreman Puppet classes"
+msgstr "Foreman Puppet クラスの管理"
+
+msgid "Manage Foreman Puppet environments"
+msgstr "Foreman Puppet 環境の管理"
+
+msgid "Manage Foreman config groups"
+msgstr "Foreman 設定グループの管理"
+
+msgid "Manage Foreman Puppet smart class parameters"
+msgstr "Foreman Puppet スマートクラスパラメーターの管理"
+
+msgid "Associate a Puppet environment"
+msgstr "Puppet 環境を関連付けます。"
+
+msgid "The environment has been associated."
+msgstr "環境が関連付けられました。"
+
+msgid "Could not associate the environment"
+msgstr "環境を関連付けることができませんでした"
+
+msgid "Disassociate a Puppet environment"
+msgstr "Puppet 環境を関連付けを解除します。"
+
+msgid "The environment has been disassociated."
+msgstr "環境の関連付けが解除されました。"
+
+msgid "Could not disassociate the environment"
+msgstr "環境の関連付けを解除できませんでした"
+
+msgid "Id"
+msgstr "ID"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Smart class parameters"
+msgstr "スマートクラスパラメーター"
+
+msgid "ID of associated Puppet environment"
+msgstr "関連する Puppet 環境の ID"
+
+msgid "Name of associated Puppet environment"
+msgstr "関連する Puppet 環境の 名前"
+
+msgid "IDs of associated Puppet environment"
+msgstr "関連する Puppet 環境の ID"
+
+msgid "Names of associated Puppet environment"
+msgstr "関連する Puppet 環境の 名前"
+
+msgid "List of Puppet class ids"
+msgstr "Puppet クラス ID の一覧"
+
+msgid "Name of Puppet CA proxy"
+msgstr "Puppet CA プロキシーの名前"
+
+msgid "Name of Puppet proxy"
+msgstr "Puppet プロキシーの名前"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Config group created."
+msgstr "設定グループが作成されました。"
+
+msgid "Could not create the config group"
+msgstr "設定グループを作成できませんでした"
+
+msgid "Config group updated."
+msgstr "設定グループが更新されました。"
+
+msgid "Could not update the config group"
+msgstr "設定グループを更新できませんでした"
+
+msgid "Config group has been deleted."
+msgstr "設定グループが削除されました。"
+
+msgid "Could not delete the config group"
+msgstr "設定グループを削除できませんでした"
+
+msgid "Environment created."
+msgstr "環境が作成されました。"
+
+msgid "Could not create the environment"
+msgstr "環境を作成できませんでした"
+
+msgid "Environment updated."
+msgstr "環境が更新されました。"
+
+msgid "Could not update the environment"
+msgstr "環境を更新できませんでした"
+
+msgid "Environment deleted."
+msgstr "環境が削除されました。"
+
+msgid "Could not delete the environment"
+msgstr "環境を削除できませんでした"
+
+msgid "Puppet Environment"
+msgstr "Puppet 環境"
+
+msgid "Puppet CA Proxy"
+msgstr "Puppet CA プロキシー"
+
+msgid "Puppet Master Proxy"
+msgstr "Puppet マスタープロキシー"
+
+msgid "Missing options to search %s"
+msgstr "%s の検索オプションがありません"
+
+msgid "one of %s not found."
+msgstr "%s の 1 つが見つかりませんでした。"
+
+msgid "Puppet environment name"
+msgstr "Puppet 環境名"
+
+msgid "Puppet class name"
+msgstr "Puppet クラス名"
+
+msgid "Smart class parameter name"
+msgstr "スマートクラスパラメーター名"
+
+msgid "Name to search by"
+msgstr "検索する名前"
+
+msgid "Puppetclasses"
+msgstr "Puppet クラス"
+
+msgid "Environments"
+msgstr "環境"
+
+msgid "Parameter"
+msgstr "パラメーター"
+
+msgid "Default Value"
+msgstr "デフォルト値"
+
+msgid "Override"
+msgstr "上書き"
+
+msgid "Puppet class"
+msgstr "Puppet クラス"
+
+msgid "Class Id"
+msgstr "クラス ID"
+
+msgid "Description"
+msgstr "説明"
+
+msgid "Type"
+msgstr "タイプ"
+
+msgid "Hidden Value?"
+msgstr "値を非表示にしますか?"
+
+msgid "Omit"
+msgstr "省略"
+
+msgid "Required"
+msgstr "必須"
+
+msgid "Validator"
+msgstr "バリデーター"
+
+msgid "Rule"
+msgstr "ルール"
+
+msgid "Override values"
+msgstr "値の上書き"
+
+msgid "Merge overrides"
+msgstr "上書きのマージ"
+
+msgid "Merge default value"
+msgstr "デフォルト値のマージ"
+
+msgid "Avoid duplicates"
+msgstr "重複の回避"
+
+msgid "Order"
+msgstr "順序"
+
+msgid "Values"
+msgstr "値"
+
+msgid "Match"
+msgstr "一致"
+
+msgid "Value"
+msgstr "値"
+
+msgid "Parameter updated."
+msgstr "パラメーターが更新されました。"
+
+msgid "Could not update the parameter"
+msgstr "パラメーターを更新できませんでした"
+
+msgid "Value to use when there is no match"
+msgstr "一致がない場合に使用する値"
+
+msgid "Override this parameter"
+msgstr "このパラメーターの上書き"
+
+msgid "This parameter is required"
+msgstr "このパラメーターは必須です"
+
+msgid "Type of the parameter"
+msgstr "パラメーターのタイプ"
+
+msgid "Type of the validator"
+msgstr "バリデーターのタイプ"
+
+msgid "The order in which values are resolved"
+msgstr "値が解決される順序"
+
+msgid "Override value, required if omit is false"
+msgstr "上書き値 (omit が false の場合に必要)"
+
+msgid "Override value created."
+msgstr "上書き値が作成されました。"
+
+msgid "Could not create the override value"
+msgstr "上書き値を作成できませんでした"
+
+msgid "Cannot use --value when --omit is true."
+msgstr "--omit が true の場合、--value を使用できません。"
+
+msgid "Override value deleted."
+msgstr "上書き値が削除されました。"
+
+msgid "Could not delete the override value"
+msgstr "上書き値を削除できませんでした"
+
+msgid "Import Puppet classes from Puppet proxy"
+msgstr "Puppet プロキシーからの Puppet クラスのインポート"
+
+msgid "Do not run the import"
+msgstr "インポートを実行しないでください"
+
+msgid "Result"
+msgstr "結果"
+
+msgid "Changed environments"
+msgstr "変更済みの環境"
+
+msgid "New classes"
+msgstr "新規クラス"
+
+msgid "Updated classes"
+msgstr "更新済みのクラス"
+
+msgid "Removed classes"
+msgstr "削除済みのクラス"
+
+msgid "Ignored classes"
+msgstr "無視するクラス"
