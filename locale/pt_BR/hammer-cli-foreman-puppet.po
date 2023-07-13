@@ -1,0 +1,288 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-foreman-puppet package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2021
+# Bryan Kearney <bryan.kearney@gmail.com>, 2021
+# Junior Alvim <alvin@intechne.com.br>, 2021
+# Luiz Henrique Vasconcelos <luizvasconceloss@yahoo.com.br>, 2021
+# mbacovsky <martin.bacovsky@gmail.com>, 2021
+# Valeria S Silva <valeriassilva@live.com>, 2021
+# Amit Upadhye <aupadhye@redhat.com>, 2022
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-foreman-puppet 0.0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-02 23:05+0530\n"
+"PO-Revision-Date: 2021-08-02 17:36+0000\n"
+"Last-Translator: Amit Upadhye <aupadhye@redhat.com>, 2022\n"
+"Language-Team: Portuguese (Brazil) (https://app.transifex.com/foreman/"
+"teams/114/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % "
+"1000000 == 0 ? 1 : 2;\n"
+
+msgid "Manage Foreman Puppet classes"
+msgstr "Gerenciar classes de marionetes do Foreman"
+
+msgid "Manage Foreman Puppet environments"
+msgstr "Gerenciar ambientes de marionetes do Foreman"
+
+msgid "Manage Foreman config groups"
+msgstr "Gerenciar grupos de configuração do Foreman"
+
+msgid "Manage Foreman Puppet smart class parameters"
+msgstr "Gerenciar parâmetros de classe inteligente do Foreman Puppet Puppet"
+
+msgid "Associate a Puppet environment"
+msgstr "Associar um ambiente Puppet"
+
+msgid "The environment has been associated."
+msgstr "O ambiente foi associado."
+
+msgid "Could not associate the environment"
+msgstr "Não foi possível associar o ambiente"
+
+msgid "Disassociate a Puppet environment"
+msgstr "Desassociar um ambiente Puppet"
+
+msgid "The environment has been disassociated."
+msgstr "O ambiente foi desassociado."
+
+msgid "Could not disassociate the environment"
+msgstr "Não foi possível desassociar o ambiente"
+
+msgid "Id"
+msgstr "Id"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Smart class parameters"
+msgstr "Parâmetros de classe inteligentes"
+
+msgid "ID of associated Puppet environment"
+msgstr "Identificação do ambiente associado ao Puppet"
+
+msgid "Name of associated Puppet environment"
+msgstr "Nome do ambiente associado ao Puppet"
+
+msgid "IDs of associated Puppet environment"
+msgstr "IDs de ambiente de bonecos associados"
+
+msgid "Names of associated Puppet environment"
+msgstr "Nomes de ambiente de marionetes associados"
+
+msgid "List of Puppet class ids"
+msgstr "Lista de IDs de classe de marionetes"
+
+msgid "Name of Puppet CA proxy"
+msgstr "Nome do proxy Puppet CA"
+
+msgid "Name of Puppet proxy"
+msgstr "Nome do Puppet proxy"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Config group created."
+msgstr "Grupo de configurações criado."
+
+msgid "Could not create the config group"
+msgstr "Não foi possível criar grupo de configurações"
+
+msgid "Config group updated."
+msgstr "Grupo de configurações atualizado."
+
+msgid "Could not update the config group"
+msgstr "Não foi possível atualiza o grupo de configurações"
+
+msgid "Config group has been deleted."
+msgstr "O grupo de configurações foi excluído."
+
+msgid "Could not delete the config group"
+msgstr "Não foi possível excluir o grupo de configurações"
+
+msgid "Environment created."
+msgstr "Ambiente criado."
+
+msgid "Could not create the environment"
+msgstr "Não foi possível criar o ambiente"
+
+msgid "Environment updated."
+msgstr "Ambiente atualizado."
+
+msgid "Could not update the environment"
+msgstr "Não foi possível atualizar o ambiente"
+
+msgid "Environment deleted."
+msgstr "Ambiente excluído."
+
+msgid "Could not delete the environment"
+msgstr "Não foi possivel remover o ambiente"
+
+msgid "Puppet Environment"
+msgstr "Ambiente puppet"
+
+msgid "Puppet CA Proxy"
+msgstr "Proxy do Puppet CA"
+
+msgid "Puppet Master Proxy"
+msgstr "Proxy do Puppet Master"
+
+msgid "Missing options to search %s"
+msgstr "Opções de pesquisa em falta %s"
+
+msgid "one of %s not found."
+msgstr "um dos %s não encontrado."
+
+msgid "Puppet environment name"
+msgstr "Nome do ambiente Puppet"
+
+msgid "Puppet class name"
+msgstr "Nome da classe do puppet"
+
+msgid "Smart class parameter name"
+msgstr "Nome de parâmetro de classe inteligente"
+
+msgid "Name to search by"
+msgstr "Nome a ser pesquisado"
+
+msgid "Puppetclasses"
+msgstr "Puppetclasses"
+
+msgid "Environments"
+msgstr "Ambientes"
+
+msgid "Parameter"
+msgstr "Parâmetro"
+
+msgid "Default Value"
+msgstr "Valor Padrão"
+
+msgid "Override"
+msgstr "Substituir"
+
+msgid "Puppet class"
+msgstr "Classe de puppet"
+
+msgid "Class Id"
+msgstr "ID da Classe"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Hidden Value?"
+msgstr "Valor oculto?"
+
+msgid "Omit"
+msgstr "Omitir"
+
+msgid "Required"
+msgstr "Solicitado"
+
+msgid "Validator"
+msgstr "Validador"
+
+msgid "Rule"
+msgstr "Regra"
+
+msgid "Override values"
+msgstr "Sobrescrever Valores"
+
+msgid "Merge overrides"
+msgstr "Mesclar substituições"
+
+msgid "Merge default value"
+msgstr "Mesclar valor padrão"
+
+msgid "Avoid duplicates"
+msgstr "Evitar duplicações"
+
+msgid "Order"
+msgstr "Ordem"
+
+msgid "Values"
+msgstr "Valores"
+
+msgid "Match"
+msgstr "Correspondência"
+
+msgid "Value"
+msgstr "Valor"
+
+msgid "Parameter updated."
+msgstr "Parâmetro atualizado."
+
+msgid "Could not update the parameter"
+msgstr "Não foi possível atualizar o parâmetro"
+
+msgid "Value to use when there is no match"
+msgstr "Valor a usar quando não houver correspondência"
+
+msgid "Override this parameter"
+msgstr "Substituir esse parâmetro"
+
+msgid "This parameter is required"
+msgstr "Este texto é exigido"
+
+msgid "Type of the parameter"
+msgstr "Tipo de parâmetro"
+
+msgid "Type of the validator"
+msgstr "Tipo do validador"
+
+msgid "The order in which values are resolved"
+msgstr "A ordem na qual os valores são resolvidos"
+
+msgid "Override value, required if omit is false"
+msgstr "Valor de substituição, necessário se omitir for falso"
+
+msgid "Override value created."
+msgstr "Valor de substituição criado."
+
+msgid "Could not create the override value"
+msgstr "Não foi possível criar o valor substituir"
+
+msgid "Cannot use --value when --omit is true."
+msgstr "Não é possível usar --value quando --omit é verdadeiro."
+
+msgid "Override value deleted."
+msgstr "Valor de substituição excluído."
+
+msgid "Could not delete the override value"
+msgstr "Não foi possível excluir o valor substituto"
+
+msgid "Import Puppet classes from Puppet proxy"
+msgstr "Importar classes de marionetes do Puppet proxy"
+
+msgid "Do not run the import"
+msgstr "Não execute a importação"
+
+msgid "Result"
+msgstr "Resultado"
+
+msgid "Changed environments"
+msgstr "Ambientes modificados"
+
+msgid "New classes"
+msgstr "Novas classes"
+
+msgid "Updated classes"
+msgstr "Classes atualizadas"
+
+msgid "Removed classes"
+msgstr "Classes removidas"
+
+msgid "Ignored classes"
+msgstr "Classes ignoradas"

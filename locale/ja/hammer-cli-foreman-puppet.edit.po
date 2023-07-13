@@ -1,0 +1,386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hammer-cli-foreman-puppet package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 0868a4d1af5275b3f70b0a6dac4c99a4, 2021
+# Bryan Kearney <bryan.kearney@gmail.com>, 2021
+# Transifex Bot <>, 2021
+# Amit Upadhye <aupadhye@redhat.com>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: hammer-cli-foreman-puppet 0.0.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-02 23:05+0530\n"
+"PO-Revision-Date: 2021-08-02 17:36+0000\n"
+"Last-Translator: Amit Upadhye <aupadhye@redhat.com>, 2022\n"
+"Language-Team: Japanese (https://app.transifex.com/foreman/teams/114/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../lib/hammer_cli_foreman_puppet.rb:30
+msgid "Manage Foreman Puppet classes"
+msgstr "Foreman Puppet クラスの管理"
+
+#: ../lib/hammer_cli_foreman_puppet.rb:36
+msgid "Manage Foreman Puppet environments"
+msgstr "Foreman Puppet 環境の管理"
+
+#: ../lib/hammer_cli_foreman_puppet.rb:42
+msgid "Manage Foreman config groups"
+msgstr "Foreman 設定グループの管理"
+
+#: ../lib/hammer_cli_foreman_puppet.rb:48
+msgid "Manage Foreman Puppet smart class parameters"
+msgstr "Foreman Puppet スマートクラスパラメーターの管理"
+
+#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:18
+msgid "Associate a Puppet environment"
+msgstr "Puppet 環境を関連付けます。"
+
+#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:21
+msgid "The environment has been associated."
+msgstr "環境が関連付けられました。"
+
+#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:22
+msgid "Could not associate the environment"
+msgstr "環境を関連付けることができませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:30
+msgid "Disassociate a Puppet environment"
+msgstr "Puppet 環境を関連付けを解除します。"
+
+#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:33
+msgid "The environment has been disassociated."
+msgstr "環境の関連付けが解除されました。"
+
+#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:34
+msgid "Could not disassociate the environment"
+msgstr "環境の関連付けを解除できませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/class.rb:8
+#: ../lib/hammer_cli_foreman_puppet/environment.rb:8
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:8
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:74
+msgid "Id"
+msgstr "ID"
+
+#: ../lib/hammer_cli_foreman_puppet/class.rb:9
+#: ../lib/hammer_cli_foreman_puppet/config_group.rb:8
+#: ../lib/hammer_cli_foreman_puppet/environment.rb:9
+msgid "Name"
+msgstr "名前"
+
+#: ../lib/hammer_cli_foreman_puppet/class.rb:29
+msgid "Smart class parameters"
+msgstr "スマートクラスパラメーター"
+
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/environment.rb:7
+msgid "ID of associated Puppet environment"
+msgstr "関連する Puppet 環境の ID"
+
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/environment.rb:10
+msgid "Name of associated Puppet environment"
+msgstr "関連する Puppet 環境の 名前"
+
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/environments.rb:7
+msgid "IDs of associated Puppet environment"
+msgstr "関連する Puppet 環境の ID"
+
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/environments.rb:10
+msgid "Names of associated Puppet environment"
+msgstr "関連する Puppet 環境の 名前"
+
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/host.rb:15
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/hostgroup.rb:21
+msgid "List of Puppet class ids"
+msgstr "Puppet クラス ID の一覧"
+
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/host.rb:20
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/hostgroup.rb:26
+msgid "Name of Puppet CA proxy"
+msgstr "Puppet CA プロキシーの名前"
+
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/host.rb:21
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/hostgroup.rb:27
+msgid "Name of Puppet proxy"
+msgstr "Puppet プロキシーの名前"
+
+#: ../lib/hammer_cli_foreman_puppet/config_group.rb:7
+msgid "ID"
+msgstr "ID"
+
+#: ../lib/hammer_cli_foreman_puppet/config_group.rb:23
+msgid "Config group created."
+msgstr "設定グループが作成されました。"
+
+#: ../lib/hammer_cli_foreman_puppet/config_group.rb:24
+msgid "Could not create the config group"
+msgstr "設定グループを作成できませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/config_group.rb:30
+msgid "Config group updated."
+msgstr "設定グループが更新されました。"
+
+#: ../lib/hammer_cli_foreman_puppet/config_group.rb:31
+msgid "Could not update the config group"
+msgstr "設定グループを更新できませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/config_group.rb:37
+msgid "Config group has been deleted."
+msgstr "設定グループが削除されました。"
+
+#: ../lib/hammer_cli_foreman_puppet/config_group.rb:38
+msgid "Could not delete the config group"
+msgstr "設定グループを削除できませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/environment.rb:28
+msgid "Environment created."
+msgstr "環境が作成されました。"
+
+#: ../lib/hammer_cli_foreman_puppet/environment.rb:29
+msgid "Could not create the environment"
+msgstr "環境を作成できませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/environment.rb:36
+msgid "Environment updated."
+msgstr "環境が更新されました。"
+
+#: ../lib/hammer_cli_foreman_puppet/environment.rb:37
+msgid "Could not update the environment"
+msgstr "環境を更新できませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/environment.rb:44
+msgid "Environment deleted."
+msgstr "環境が削除されました。"
+
+#: ../lib/hammer_cli_foreman_puppet/environment.rb:45
+msgid "Could not delete the environment"
+msgstr "環境を削除できませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/host.rb:39
+#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:36
+#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:42
+msgid "Puppet Environment"
+msgstr "Puppet 環境"
+
+#: ../lib/hammer_cli_foreman_puppet/host.rb:40
+#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:43
+msgid "Puppet CA Proxy"
+msgstr "Puppet CA プロキシー"
+
+#: ../lib/hammer_cli_foreman_puppet/host.rb:41
+#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:44
+msgid "Puppet Master Proxy"
+msgstr "Puppet マスタープロキシー"
+
+#: ../lib/hammer_cli_foreman_puppet/id_resolver.rb:23
+msgid "Missing options to search %s"
+msgstr "%s の検索オプションがありません"
+
+#: ../lib/hammer_cli_foreman_puppet/id_resolver.rb:31
+msgid "one of %s not found."
+msgstr "%s の 1 つが見つかりませんでした。"
+
+#: ../lib/hammer_cli_foreman_puppet/id_resolver.rb:69
+#: ../lib/hammer_cli_foreman_puppet/id_resolver.rb:70
+msgid "Puppet environment name"
+msgstr "Puppet 環境名"
+
+#: ../lib/hammer_cli_foreman_puppet/id_resolver.rb:71
+msgid "Puppet class name"
+msgstr "Puppet クラス名"
+
+#: ../lib/hammer_cli_foreman_puppet/id_resolver.rb:72
+msgid "Smart class parameter name"
+msgstr "スマートクラスパラメーター名"
+
+#: ../lib/hammer_cli_foreman_puppet/id_resolver.rb:75
+msgid "Name to search by"
+msgstr "検索する名前"
+
+#: ../lib/hammer_cli_foreman_puppet/puppet_references.rb:6
+#: ../lib/hammer_cli_foreman_puppet/references.rb:15
+msgid "Puppetclasses"
+msgstr "Puppet クラス"
+
+#: ../lib/hammer_cli_foreman_puppet/puppet_references.rb:14
+#: ../lib/hammer_cli_foreman_puppet/references.rb:7
+msgid "Environments"
+msgstr "環境"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:10
+msgid "Parameter"
+msgstr "パラメーター"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:11
+msgid "Default Value"
+msgstr "デフォルト値"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:12
+msgid "Override"
+msgstr "上書き"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:34
+msgid "Puppet class"
+msgstr "Puppet クラス"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:35
+msgid "Class Id"
+msgstr "クラス ID"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:57
+msgid "Description"
+msgstr "説明"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:58
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:64
+msgid "Type"
+msgstr "タイプ"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:59
+msgid "Hidden Value?"
+msgstr "値を非表示にしますか?"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:60
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:77
+msgid "Omit"
+msgstr "省略"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:61
+msgid "Required"
+msgstr "必須"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:63
+msgid "Validator"
+msgstr "バリデーター"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:65
+msgid "Rule"
+msgstr "ルール"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:67
+msgid "Override values"
+msgstr "値の上書き"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:68
+msgid "Merge overrides"
+msgstr "上書きのマージ"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:69
+msgid "Merge default value"
+msgstr "デフォルト値のマージ"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:70
+msgid "Avoid duplicates"
+msgstr "重複の回避"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:71
+msgid "Order"
+msgstr "順序"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:73
+msgid "Values"
+msgstr "値"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:75
+msgid "Match"
+msgstr "一致"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:76
+msgid "Value"
+msgstr "値"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:102
+msgid "Parameter updated."
+msgstr "パラメーターが更新されました。"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:103
+msgid "Could not update the parameter"
+msgstr "パラメーターを更新できませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:105
+msgid "Value to use when there is no match"
+msgstr "一致がない場合に使用する値"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:112
+msgid "Override this parameter"
+msgstr "このパラメーターの上書き"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:114
+msgid "This parameter is required"
+msgstr "このパラメーターは必須です"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:116
+msgid "Type of the parameter"
+msgstr "パラメーターのタイプ"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:119
+msgid "Type of the validator"
+msgstr "バリデーターのタイプ"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:121
+msgid "The order in which values are resolved"
+msgstr "値が解決される順序"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:142
+msgid "Override value, required if omit is false"
+msgstr "上書き値 (omit が false の場合に必要)"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:144
+msgid "Override value created."
+msgstr "上書き値が作成されました。"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:145
+msgid "Could not create the override value"
+msgstr "上書き値を作成できませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:153
+msgid "Cannot use --value when --omit is true."
+msgstr "--omit が true の場合、--value を使用できません。"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:166
+msgid "Override value deleted."
+msgstr "上書き値が削除されました。"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:167
+msgid "Could not delete the override value"
+msgstr "上書き値を削除できませんでした"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_proxy.rb:9
+msgid "Import Puppet classes from Puppet proxy"
+msgstr "Puppet プロキシーからの Puppet クラスのインポート"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_proxy.rb:10
+msgid "Do not run the import"
+msgstr "インポートを実行しないでください"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_proxy.rb:14
+msgid "Result"
+msgstr "結果"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_proxy.rb:15
+msgid "Changed environments"
+msgstr "変更済みの環境"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_proxy.rb:17
+msgid "New classes"
+msgstr "新規クラス"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_proxy.rb:20
+msgid "Updated classes"
+msgstr "更新済みのクラス"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_proxy.rb:23
+msgid "Removed classes"
+msgstr "削除済みのクラス"
+
+#: ../lib/hammer_cli_foreman_puppet/smart_proxy.rb:26
+msgid "Ignored classes"
+msgstr "無視するクラス"
