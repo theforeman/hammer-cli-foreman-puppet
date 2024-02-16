@@ -1,50 +1,18 @@
-name: Run unit tests
+name: CI 
 
 on:
-  - push
-  - pull_request
+  pull_request:
+  push:
+    branches:
+      - 'master'
+
+concurrency:
+  group: ${{ github.ref_name }}-${{ github.workflow }}
+  cancel-in-progress: true
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: hammer-cli-foreman-puppet
-    strategy:
-      fail-fast: false
-      matrix:
-        ruby:
-          - 2.7
-          - '3.0'
-          - 3.1
-
-    steps:
-      - name: Get hammer-cli
-        uses: actions/checkout@v2
-        with:
-          repository: theforeman/hammer-cli
-          ref: master
-          path: hammer-cli
-      - name: Get hammer-cli-foreman
-        uses: actions/checkout@v2
-        with:
-          repository: theforeman/hammer-cli-foreman
-          ref: master
-          path: hammer-cli-foreman
-      - name: Get hammer-cli-foreman-puppet
-        uses: actions/checkout@v2
-        with:
-          path: hammer-cli-foreman-puppet
-      - name: Configure local gem dependencies
-        run: |
-          echo "gemspec path: '../hammer-cli', name: 'hammer_cli'" > Gemfile.local.rb
-          echo "gemspec path: '../hammer-cli-foreman', name: 'hammer_cli_foreman'" >> Gemfile.local.rb
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: ${{ matrix.ruby }}
-          bundler-cache: true
-          working-directory: hammer-cli-foreman-puppet
-      - name: Run tests
-        run: |
-          bundle exec rake test
+    name: Tests
+    uses: theforeman/actions/.github/workflows/test-gem.yml@v0
+    with:
+      command: bundle exec rake test
