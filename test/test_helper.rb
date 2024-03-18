@@ -6,7 +6,7 @@ SimpleCov.start do
   command_name 'MiniTest'
   add_filter 'test'
 end
-SimpleCov.root Pathname.new(File.dirname(__FILE__) + "../../../")
+SimpleCov.root Pathname.new("#{File.dirname(__FILE__)}../../../")
 
 
 require 'minitest/autorun'

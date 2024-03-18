@@ -1,5 +1,4 @@
 require 'rake/testtask'
-require 'ci/reporter/rake/minitest'
 
 Rake::TestTask.new do |t|
   t.libs.push 'lib'
@@ -8,7 +7,15 @@ Rake::TestTask.new do |t|
   t.warning = ENV.key?('RUBY_WARNINGS')
 end
 
-task :default => :test
+begin
+  require 'rubocop/rake_task'
+rescue LoadError
+  # RuboCop is optional
+  task default: :test
+else
+  RuboCop::RakeTask.new
+  task default: [:rubocop, :test]
+end
 
 require 'hammer_cli_foreman_puppet/version'
 require 'hammer_cli_foreman_puppet/i18n'

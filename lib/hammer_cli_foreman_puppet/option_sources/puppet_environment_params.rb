@@ -1,4 +1,3 @@
-
 module HammerCLIForemanPuppet
   module OptionSources
     class PuppetEnvironmentParams < HammerCLI::Options::Sources::Base

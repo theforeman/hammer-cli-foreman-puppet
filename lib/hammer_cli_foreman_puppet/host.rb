@@ -5,7 +5,6 @@ require 'hammer_cli_foreman_puppet/command_extensions/host'
 
 module HammerCLIForemanPuppet
   class Host < HammerCLIForemanPuppet::Command
-
     class PuppetClassesCommand < HammerCLIForemanPuppet::ListCommand
       include EnvironmentNameMapping
       command_name "puppet-classes"
@@ -44,12 +43,12 @@ module HammerCLIForemanPuppet
   end
 
   HammerCLIForeman::Host.subcommand 'puppet-classes',
-                                     HammerCLIForemanPuppet::Host::PuppetClassesCommand.desc,
-                                     HammerCLIForemanPuppet::Host::PuppetClassesCommand
+                                    HammerCLIForemanPuppet::Host::PuppetClassesCommand.desc,
+                                    HammerCLIForemanPuppet::Host::PuppetClassesCommand
 
   HammerCLIForeman::Host.subcommand 'sc-params',
-                                     HammerCLIForemanPuppet::Host::SCParamsCommand.desc,
-                                     HammerCLIForemanPuppet::Host::SCParamsCommand
+                                    HammerCLIForemanPuppet::Host::SCParamsCommand.desc,
+                                    HammerCLIForemanPuppet::Host::SCParamsCommand
 
   HammerCLIForeman::Host::ListCommand.extend_with(
     HammerCLIForemanPuppet::CommandExtensions::PuppetEnvironment.new
