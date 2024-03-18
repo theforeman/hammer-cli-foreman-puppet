@@ -1,6 +1,5 @@
 module HammerCLIForemanPuppet
   class PuppetClass < HammerCLIForemanPuppet::Command
-
     resource :puppetclasses
 
     class ListCommand < HammerCLIForemanPuppet::ListCommand
@@ -14,7 +13,7 @@ module HammerCLIForemanPuppet
       end
 
       def self.unhash_classes(classes)
-        clss = classes.first.inject([]) { |list, (pp_module, pp_module_classes)| list + pp_module_classes }
+        clss = classes.first.inject([]) { |list, (_pp_module, pp_module_classes)| list + pp_module_classes }
 
         HammerCLI::Output::RecordCollection.new(clss, :meta => classes.meta)
       end
@@ -38,7 +37,6 @@ module HammerCLIForemanPuppet
 
       extend_with(HammerCLIForemanPuppet::CommandExtensions::PuppetEnvironment.new)
     end
-
 
     class SCParamsCommand < HammerCLIForemanPuppet::SmartClassParametersBriefList
       build_options_for :puppetclasses

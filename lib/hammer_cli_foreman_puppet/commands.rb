@@ -15,8 +15,8 @@ module HammerCLIForemanPuppet
     def self.included(base)
       base.extend(ClassMethods)
     end
-    module ClassMethods
 
+    module ClassMethods
       def api_connection
         if HammerCLI.context[:api_connection]
           HammerCLI.context[:api_connection].get("foreman")
@@ -31,6 +31,7 @@ module HammerCLIForemanPuppet
           HammerCLIForemanPuppet::Searchables.new
         )
       end
+
       def resource_name_mapping
         HammerCLIForemanPuppet::RESOURCE_NAME_MAPPING.dup
       end

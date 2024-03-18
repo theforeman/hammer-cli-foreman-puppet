@@ -1,5 +1,4 @@
 module HammerCLIForemanPuppet
-
   class SmartClassParametersBriefList < HammerCLIForemanPuppet::ListCommand
     resource :smart_class_parameters, :index
     command_name 'sc-params'
@@ -110,14 +109,15 @@ module HammerCLIForemanPuppet
       end
 
       option "--override", "OVERRIDE", _("Override this parameter"),
-        :format => HammerCLI::Options::Normalizers::Bool.new
+             :format => HammerCLI::Options::Normalizers::Bool.new
       option "--required", "REQUIRED", _("This parameter is required"),
-        :format => HammerCLI::Options::Normalizers::Bool.new
+             :format => HammerCLI::Options::Normalizers::Bool.new
       option "--parameter-type", "PARAMETER_TYPE", _("Type of the parameter"),
-        :format => HammerCLI::Options::Normalizers::Enum.new(
-            ['string', 'boolean', 'integer', 'real', 'array', 'hash', 'yaml', 'json'])
+             :format => HammerCLI::Options::Normalizers::Enum.new(
+               %w[string boolean integer real array hash yaml json]
+             )
       option "--validator-type", "VALIDATOR_TYPE", _("Type of the validator"),
-        :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
+             :format => HammerCLI::Options::Normalizers::Enum.new(['regexp', 'list', ''])
       option "--override-value-order", "OVERRIDE_VALUE_ORDER", _("The order in which values are resolved"),
              :format => HammerCLI::Options::Normalizers::List.new
 

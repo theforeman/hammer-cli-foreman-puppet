@@ -70,18 +70,18 @@ module HammerCLIForemanPuppet
         api_expects(:puppetclasses, :index) do |p|
           p[:search] = 'name = "pc1" or name = "pc2"'
         end.returns(index_response('puppetclasses' => [
-          {'id' => 1, 'name' => 'pc1'},
-          {'id' => 2, 'name' => 'pc2'}
-        ]))
+                                     { 'id' => 1, 'name' => 'pc1' },
+                                     { 'id' => 2, 'name' => 'pc2' }
+                                   ]))
         # FIXME: Called twice because of puppetclass_ids being mentioned twice in the docs
         api_expects(:puppetclasses, :index) do |p|
           p[:search] = 'name = "pc1" or name = "pc2"'
         end.returns(index_response('puppetclasses' => [
-          {'id' => 1, 'name' => 'pc1'},
-          {'id' => 2, 'name' => 'pc2'}
-        ]))
+                                     { 'id' => 1, 'name' => 'pc1' },
+                                     { 'id' => 2, 'name' => 'pc2' }
+                                   ]))
         api_expects(:hosts, :create) do |p|
-          p['host']['puppet_attributes']['puppetclass_ids'] == [1,2] &&
+          p['host']['puppet_attributes']['puppetclass_ids'] == [1, 2] &&
             p['host']['name'] == 'hst1'
         end
         run_cmd(cmd + minimal_params_without_hostgroup + params)
@@ -106,7 +106,8 @@ module HammerCLIForemanPuppet
             p[:page].to_i == 1 &&
             p[:per_page].to_i == HammerCLIForeman::IdResolver::ALL_PER_PAGE
         end.returns(
-          index_response('puppetclasses' => response_objects[0...1000]))
+          index_response('puppetclasses' => response_objects[0...1000])
+        )
 
         api_expects(:puppetclasses, :index) do |p|
           p[:search] == search_objects.join(' or ') &&
@@ -120,7 +121,8 @@ module HammerCLIForemanPuppet
             p[:page].to_i == 1 &&
             p[:per_page].to_i == HammerCLIForeman::IdResolver::ALL_PER_PAGE
         end.returns(
-          index_response('puppetclasses' => response_objects[0...1000]))
+          index_response('puppetclasses' => response_objects[0...1000])
+        )
 
         api_expects(:puppetclasses, :index) do |p|
           p[:search] == search_objects.join(' or ') &&
@@ -174,16 +176,16 @@ module HammerCLIForemanPuppet
         api_expects(:config_groups, :index) do |p|
           p[:search] = 'name = "cg1" or name = "cg2"'
         end.returns(index_response([
-          {'id' => 1, 'name' => 'cg1'},
-          {'id' => 2, 'name' => 'cg2'}
-        ]))
+                                     { 'id' => 1, 'name' => 'cg1' },
+                                     { 'id' => 2, 'name' => 'cg2' }
+                                   ]))
         # FIXME: Called twice because of config_group_ids being mentioned twice in the docs
         api_expects(:config_groups, :index) do |p|
           p[:search] = 'name = "cg1" or name = "cg2"'
         end.returns(index_response([
-          {'id' => 1, 'name' => 'cg1'},
-          {'id' => 2, 'name' => 'cg2'}
-        ]))
+                                     { 'id' => 1, 'name' => 'cg1' },
+                                     { 'id' => 2, 'name' => 'cg2' }
+                                   ]))
         api_expects(:hosts, :create) do |p|
           p['host']['puppet_attributes']['config_group_ids'] == [1, 2] &&
             p['host']['name'] == 'hst1'

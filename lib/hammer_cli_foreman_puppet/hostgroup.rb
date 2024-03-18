@@ -1,9 +1,8 @@
 require 'hammer_cli_foreman/hostgroup'
-require 'hammer_cli_foreman_puppet/command_extensions/hostgroup.rb'
+require 'hammer_cli_foreman_puppet/command_extensions/hostgroup'
 
 module HammerCLIForemanPuppet
   class Hostgroup < HammerCLIForemanPuppet::Command
-
     class PuppetClassesCommand < HammerCLIForemanPuppet::ListCommand
       command_name "puppet-classes"
       resource :puppetclasses
@@ -47,12 +46,12 @@ module HammerCLIForemanPuppet
   end
 
   HammerCLIForeman::Hostgroup.subcommand 'puppet-classes',
-                                          HammerCLIForemanPuppet::Hostgroup::PuppetClassesCommand.desc,
-                                          HammerCLIForemanPuppet::Hostgroup::PuppetClassesCommand
+                                         HammerCLIForemanPuppet::Hostgroup::PuppetClassesCommand.desc,
+                                         HammerCLIForemanPuppet::Hostgroup::PuppetClassesCommand
 
   HammerCLIForeman::Hostgroup.subcommand 'sc-params',
-                                          HammerCLIForemanPuppet::Hostgroup::PuppetSCParamsCommand.desc,
-                                          HammerCLIForemanPuppet::Hostgroup::PuppetSCParamsCommand
+                                         HammerCLIForemanPuppet::Hostgroup::PuppetSCParamsCommand.desc,
+                                         HammerCLIForemanPuppet::Hostgroup::PuppetSCParamsCommand
 
   HammerCLIForeman::Hostgroup::CreateCommand.include(HammerCLIForemanPuppet::EnvironmentNameMapping)
   # Delete deprecated options explicitly until they are deleted from API
@@ -75,6 +74,6 @@ module HammerCLIForemanPuppet
   HammerCLIForeman::Hostgroup::ListCommand.extend_with(
     HammerCLIForemanPuppet::CommandExtensions::HostgroupList.new
   )
-#TODO - adding puppet class options
-#TODO - resolver
+  # TODO: - adding puppet class options
+  # TODO - resolver
 end

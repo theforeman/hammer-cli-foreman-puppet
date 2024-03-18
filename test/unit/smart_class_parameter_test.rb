@@ -4,11 +4,9 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 require 'hammer_cli_foreman_puppet/smart_class_parameter'
 
 describe HammerCLIForemanPuppet::SmartClassParameter do
-
   include CommandTestHelper
 
   context "ListCommand" do
-
     before :each do
       ResourceMocks.smart_class_parameters_index
     end
@@ -36,12 +34,10 @@ describe HammerCLIForemanPuppet::SmartClassParameter do
       it_should_print_column "Default Value"
       it_should_print_column "Override"
     end
-
   end
 
 
   context "InfoCommand" do
-
     before :each do
       ResourceMocks.smart_class_parameters_show
     end
@@ -59,38 +55,35 @@ describe HammerCLIForemanPuppet::SmartClassParameter do
     context "output" do
       with_params ["--id=1"] do
         it_should_print_n_records 1
-        it_should_print_columns ["Description", "Type", "Omit", "Required"]
+        it_should_print_columns %w[Description Type Omit Required]
       end
     end
   end
 
 
   context "UpdateCommand" do
-
     let(:cmd) { HammerCLIForemanPuppet::SmartClassParameter::UpdateCommand.new("", ctx) }
 
     context "parameters" do
       it_should_accept "id", ["--id=1"]
       it_should_accept "name, puppet-class", ["--name=par", "--puppet-class=ntp"]
       it_should_fail_with "name", ["--name=par"]
-      it_should_accept "override", ["--id=1","--override=true"]
-      it_should_accept "description", ["--id=1","--description=descr"]
-      it_should_accept "default-value", ["--id=1","--default-value=1"]
-      it_should_accept "path  ", ["--id=1","--path=path"]
-      it_should_accept "validator-type", ["--id=1","--validator-type=list"]
-      it_should_accept "validator-rule ", ["--id=1","--validator-rule=''"]
-      it_should_accept "override-value-order", ["--id=1","--override-value-order=fqdn"]
-      it_should_accept "parameter-type ", ["--id=1","--parameter-type=string"]
-      it_should_accept "required", ["--id=1","--required=true"]
+      it_should_accept "override", ["--id=1", "--override=true"]
+      it_should_accept "description", ["--id=1", "--description=descr"]
+      it_should_accept "default-value", ["--id=1", "--default-value=1"]
+      it_should_accept "path  ", ["--id=1", "--path=path"]
+      it_should_accept "validator-type", ["--id=1", "--validator-type=list"]
+      it_should_accept "validator-rule ", ["--id=1", "--validator-rule=''"]
+      it_should_accept "override-value-order", ["--id=1", "--override-value-order=fqdn"]
+      it_should_accept "parameter-type ", ["--id=1", "--parameter-type=string"]
+      it_should_accept "required", ["--id=1", "--required=true"]
 
       # it_should_fail_with "no params", []
       # TODO: temporarily disabled, parameters are checked in the id resolver
     end
-
   end
 
   context "AddMatcherCommand" do
-
     let(:cmd) { HammerCLIForemanPuppet::SmartClassParameter::AddMatcherCommand.new("", ctx) }
 
     context "parameters" do
@@ -101,7 +94,6 @@ describe HammerCLIForemanPuppet::SmartClassParameter do
   end
 
   context "RemoveMatcherCommand" do
-
     let(:cmd) { HammerCLIForemanPuppet::SmartClassParameter::RemoveMatcherCommand.new("", ctx) }
 
     context "parameters" do
@@ -110,5 +102,4 @@ describe HammerCLIForemanPuppet::SmartClassParameter do
       it_should_fail_with "smart-class-parameter, id", ["--smart-class-parameter=par", "--id=1"]
     end
   end
-
 end

@@ -1,4 +1,4 @@
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'hammer_cli_foreman_puppet/version'
 
@@ -16,7 +16,6 @@ Gem::Specification.new do |spec|
   # TODO: Don't forget to update required files accordingly!
   spec.files         = Dir['{lib,config}/**/*', 'LICENSE', 'README*'] + Dir["locale/**/*.{po,pot,mo}"]
   spec.require_paths = ['lib']
-  spec.test_files    = Dir['{test}/**/*']
 
   spec.add_dependency 'hammer_cli_foreman', '> 2.6.0', '< 4.0.0'
 

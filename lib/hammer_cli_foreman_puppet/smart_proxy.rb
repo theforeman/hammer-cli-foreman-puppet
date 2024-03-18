@@ -53,6 +53,6 @@ module HammerCLIForemanPuppet
     extend_with(HammerCLIForemanPuppet::CommandExtensions::PuppetEnvironment.new)
   end
   HammerCLIForeman::SmartProxy.subcommand 'import-classes',
-                                           HammerCLIForemanPuppet::ImportPuppetClassesCommand.desc,
-                                           HammerCLIForemanPuppet::ImportPuppetClassesCommand
+                                          HammerCLIForemanPuppet::ImportPuppetClassesCommand.desc,
+                                          HammerCLIForemanPuppet::ImportPuppetClassesCommand
 end

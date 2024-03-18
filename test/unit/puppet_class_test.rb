@@ -4,7 +4,6 @@ require File.join(File.dirname(__FILE__), 'apipie_resource_mock')
 require 'hammer_cli_foreman_puppet/class'
 
 describe HammerCLIForemanPuppet::PuppetClass do
-
   include CommandTestHelper
 
   context "ListCommand" do
@@ -30,12 +29,10 @@ describe HammerCLIForemanPuppet::PuppetClass do
       it_should_print_column "Id"
       it_should_print_column "Name"
     end
-
   end
 
 
   context "InfoCommand" do
-
     let(:cmd) { HammerCLIForemanPuppet::PuppetClass::InfoCommand.new("", ctx) }
 
     context "parameters" do
@@ -50,11 +47,9 @@ describe HammerCLIForemanPuppet::PuppetClass do
         it_should_print_column "Name"
       end
     end
-
   end
 
   context "SCParamsCommand" do
-
     before :each do
       ResourceMocks.smart_class_parameters_index
     end
@@ -66,7 +61,5 @@ describe HammerCLIForemanPuppet::PuppetClass do
       it_should_accept "puppet-class-id", ["--puppet-class-id=1"]
       # it_should_fail_with "name or id missing", [] # TODO: temporarily disabled, parameters are checked in the id resolver
     end
-
   end
-
 end

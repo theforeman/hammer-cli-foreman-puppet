@@ -15,7 +15,7 @@ module HammerCLIForemanPuppet
     def puppetclass_ids(options)
       resource_name = :puppetclasses
       resource = @api.resource(resource_name)
-      results = if (ids = options[HammerCLI.option_accessor_name("ids")])
+      if (ids = options[HammerCLI.option_accessor_name("ids")])
         ids
       elsif (ids = nil_from_searchables(resource_name, options, :plural => true))
         ids
@@ -29,7 +29,7 @@ module HammerCLIForemanPuppet
           resolved_call(resource_name, :index, options, :multi)
         )
         raise HammerCLIForeman::ResolverError.new(_("one of %s not found.") % resource.name, resource) if results.count < expected_record_count(options, resource, :multi)
-          results.map { |r| r['id'] }
+        results.map { |r| r['id'] }
       end
     end
 
@@ -66,10 +66,10 @@ module HammerCLIForemanPuppet
 
   class Searchables < HammerCLIForeman::Searchables
     SEARCHABLES = {
-      :environment =>        [s_name(_('Puppet environment name'))],
+      :environment => [s_name(_('Puppet environment name'))],
       :puppet_environment => [s_name(_('Puppet environment name'))],
-      :puppetclass =>      [ s_name(_("Puppet class name")) ],
-      :smart_class_parameter => [ s_name(_("Smart class parameter name"), :editable => false) ],
+      :puppetclass => [s_name(_("Puppet class name"))],
+      :smart_class_parameter => [s_name(_("Smart class parameter name"), :editable => false)]
     }.freeze
 
     DEFAULT_SEARCHABLES = [s_name(_("Name to search by"))].freeze

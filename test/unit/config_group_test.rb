@@ -21,7 +21,7 @@ describe HammerCLIForemanPuppet::ConfigGroup do
     context "output" do
       let(:expected_record_count) { cmd.resource.call(:index).length }
       it_should_print_n_records
-      it_should_print_columns ["ID", "Name"]
+      it_should_print_columns %w[ID Name]
     end
   end
 
@@ -62,7 +62,6 @@ describe HammerCLIForemanPuppet::ConfigGroup do
   end
 
   context "UpdateCommand" do
-
     let(:cmd) { HammerCLIForemanPuppet::ConfigGroup::UpdateCommand.new("", ctx) }
 
     context "parameters" do
