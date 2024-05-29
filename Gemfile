@@ -11,9 +11,8 @@ group :test do
   gem 'minitest-spec-context'
   gem 'mocha'
   gem 'rake', '~> 13.0'
-  gem 'rubocop-minitest', '~> 0.9.0'
-  gem 'rubocop-performance', '~> 1.5.2'
   gem 'simplecov'
+  gem 'theforeman-rubocop', '~> 0.1.0'
 end
 
 # load local gemfile
