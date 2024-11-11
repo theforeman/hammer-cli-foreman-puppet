@@ -1,9 +1,9 @@
 [main]
 host = https://app.transifex.com
 
-[o:foreman:p:foreman:r:hammer-cli-foreman-puppet]
-file_filter = locale/<lang>/hammer-cli-foreman-puppet.edit.po
-source_file = locale/hammer-cli-foreman-puppet.pot
+[o:foreman:p:foreman:r:hammer_cli_foreman_puppet]
+file_filter = locale/<lang>/hammer_cli_foreman_puppet.edit.po
+source_file = locale/hammer_cli_foreman_puppet.pot
 source_lang = en
 type = PO
-resource_name = hammer-cli-foreman-puppet
+resource_name = hammer_cli_foreman_puppet
