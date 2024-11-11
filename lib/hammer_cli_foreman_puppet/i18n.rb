@@ -13,7 +13,7 @@ module HammerCLIForemanPuppet
       end
 
       def domain_name
-        'hammer-cli-foreman-puppet'
+        'hammer_cli_foreman_puppet'
       end
 
       def type
