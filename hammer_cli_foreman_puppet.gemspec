@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Amir Fefer']
   spec.email         = ['amirfefer@gmail.com']
   spec.homepage      = 'https://github.com/theforeman/hammer-cli-foreman-puppet'
-  spec.license       = 'GPL-3.0'
+  spec.license       = 'GPL-3.0-only'
 
   spec.platform      = Gem::Platform::RUBY
   spec.summary       = 'Foreman Puppet plugin for Hammer CLI'
