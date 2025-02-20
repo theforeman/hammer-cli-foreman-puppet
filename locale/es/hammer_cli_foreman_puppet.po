@@ -7,7 +7,7 @@
 # Lukáš Zapletal, 2021
 # Carmela Rubiños <carmela.rubinos@gmail.com>, 2021
 # Bryan Kearney <bryan.kearney@gmail.com>, 2021
-# Sergio Ocón-Cárdenas <sergio.ocon@redhat.com>, 2021
+# Sergio Ocón-Cárdenas, 2021
 # mbacovsky <martin.bacovsky@gmail.com>, 2021
 # Cha'gara Casanova <jlozada2426@gmail.com>, 2021
 # Amit Upadhye <aupadhye@redhat.com>, 2022
