@@ -7,6 +7,7 @@
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2021
 # Bryan Kearney <bryan.kearney@gmail.com>, 2021
 # Amit Upadhye <aupadhye@redhat.com>, 2022
+# Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2025
 #
 #, fuzzy
 msgid ""
@@ -15,7 +16,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-02 23:05+0530\n"
 "PO-Revision-Date: 2021-08-02 17:36+0000\n"
-"Last-Translator: Amit Upadhye <aupadhye@redhat.com>, 2022\n"
+"Last-Translator: Ewoud Kohl van Wijngaarden "
+"<ewoud+transifex@kohlvanwijngaarden.nl>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/foreman/teams/114/"
 "zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -133,7 +135,7 @@ msgid "Puppet Master Proxy"
 msgstr "Puppet 主代理服务器"
 
 msgid "Missing options to search %s"
-msgstr "缺少搜索 %s 的选项。"
+msgstr "缺少搜索 %s 的选项"
 
 msgid "one of %s not found."
 msgstr "一个 %s 未找到。"
