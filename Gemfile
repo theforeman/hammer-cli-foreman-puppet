@@ -7,9 +7,9 @@ gem 'gettext', '>= 3.1.3', '< 4.0.0'
 gem 'hammer_cli_foreman', github: 'theforeman/hammer-cli-foreman', branch: 'master'
 
 group :test do
-  gem 'minitest'
+  gem 'minitest', '~> 5.18'
   gem 'minitest-spec-context'
-  gem 'mocha'
+  gem 'mocha', "~> 2.1.0"
   gem 'rake', '~> 13.0'
   gem 'simplecov'
   gem 'theforeman-rubocop', '~> 0.1.0'
