@@ -1,15 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-foreman-puppet package.
+# This file is distributed under the same license as the hammer_cli_foreman_puppet package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: hammer-cli-foreman-puppet 0.0.2\n"
+"Project-Id-Version: hammer_cli_foreman_puppet 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-02 23:05+0530\n"
-"PO-Revision-Date: 2021-08-02 23:05+0530\n"
+"POT-Creation-Date: 2026-02-10 11:06+0000\n"
+"PO-Revision-Date: 2026-02-10 11:06+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -34,51 +34,36 @@ msgstr ""
 msgid "Manage Foreman Puppet smart class parameters"
 msgstr ""
 
-#:
-#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:18
-msgid "Associate a Puppet environment"
-msgstr ""
-
-#:
-#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:21
-msgid "The environment has been associated."
-msgstr ""
-
-#:
-#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:22
-msgid "Could not associate the environment"
-msgstr ""
-
-#:
-#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:30
-msgid "Disassociate a Puppet environment"
-msgstr ""
-
-#:
-#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:33
-msgid "The environment has been disassociated."
-msgstr ""
-
-#:
-#: ../lib/hammer_cli_foreman_puppet/associating_commands/associating_commands.rb:34
-msgid "Could not disassociate the environment"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman_puppet/class.rb:8
+#: ../lib/hammer_cli_foreman_puppet/class.rb:7
 #: ../lib/hammer_cli_foreman_puppet/environment.rb:8
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:8
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:74
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:7
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:73
 msgid "Id"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/class.rb:9
+#: ../lib/hammer_cli_foreman_puppet/class.rb:8
 #: ../lib/hammer_cli_foreman_puppet/config_group.rb:8
 #: ../lib/hammer_cli_foreman_puppet/environment.rb:9
 msgid "Name"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/class.rb:29
+#: ../lib/hammer_cli_foreman_puppet/class.rb:28
 msgid "Smart class parameters"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman_puppet/combination.rb:8
+#: ../lib/hammer_cli_foreman_puppet/host.rb:38
+#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:34
+#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:40
+msgid "Puppet Environment"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman_puppet/combination.rb:15
+msgid "Puppet Environment ID"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman_puppet/combination.rb:16
+msgid "Puppet Environment name"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman_puppet/command_extensions/environment.rb:7
@@ -102,14 +87,19 @@ msgstr ""
 msgid "List of Puppet class ids"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/command_extensions/host.rb:20
-#: ../lib/hammer_cli_foreman_puppet/command_extensions/hostgroup.rb:26
-msgid "Name of Puppet CA proxy"
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/host.rb:25
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/hostgroup.rb:31
+msgid "IDs of associated config groups"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/command_extensions/host.rb:21
-#: ../lib/hammer_cli_foreman_puppet/command_extensions/hostgroup.rb:27
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/host.rb:31
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/hostgroup.rb:37
 msgid "Name of Puppet proxy"
+msgstr ""
+
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/host.rb:34
+#: ../lib/hammer_cli_foreman_puppet/command_extensions/hostgroup.rb:36
+msgid "Name of Puppet CA proxy"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman_puppet/config_group.rb:7
@@ -165,18 +155,12 @@ msgid "Could not delete the environment"
 msgstr ""
 
 #: ../lib/hammer_cli_foreman_puppet/host.rb:39
-#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:36
-#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:42
-msgid "Puppet Environment"
-msgstr ""
-
-#: ../lib/hammer_cli_foreman_puppet/host.rb:40
-#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:43
+#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:41
 msgid "Puppet CA Proxy"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/host.rb:41
-#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:44
+#: ../lib/hammer_cli_foreman_puppet/host.rb:40
+#: ../lib/hammer_cli_foreman_puppet/hostgroup.rb:42
 msgid "Puppet Master Proxy"
 msgstr ""
 
@@ -205,119 +189,117 @@ msgstr ""
 msgid "Name to search by"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/puppet_references.rb:6
-#: ../lib/hammer_cli_foreman_puppet/references.rb:15
+#: ../lib/hammer_cli_foreman_puppet/puppet_references.rb:5
 msgid "Puppetclasses"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/puppet_references.rb:14
-#: ../lib/hammer_cli_foreman_puppet/references.rb:7
+#: ../lib/hammer_cli_foreman_puppet/puppet_references.rb:13
 msgid "Environments"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:10
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:9
 msgid "Parameter"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:11
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:10
 msgid "Default Value"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:12
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:11
 msgid "Override"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:34
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:33
 msgid "Puppet class"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:35
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:34
 msgid "Class Id"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:57
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:56
 msgid "Description"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:58
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:64
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:57
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:63
 msgid "Type"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:59
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:58
 msgid "Hidden Value?"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:60
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:77
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:59
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:76
 msgid "Omit"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:61
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:60
 msgid "Required"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:63
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:62
 msgid "Validator"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:65
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:64
 msgid "Rule"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:67
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:66
 msgid "Override values"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:68
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:67
 msgid "Merge overrides"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:69
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:68
 msgid "Merge default value"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:70
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:69
 msgid "Avoid duplicates"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:71
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:70
 msgid "Order"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:73
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:72
 msgid "Values"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:75
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:74
 msgid "Match"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:76
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:75
 msgid "Value"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:102
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:101
 msgid "Parameter updated."
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:103
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:102
 msgid "Could not update the parameter"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:105
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:104
 msgid "Value to use when there is no match"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:112
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:111
 msgid "Override this parameter"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:114
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:113
 msgid "This parameter is required"
 msgstr ""
 
-#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:116
+#: ../lib/hammer_cli_foreman_puppet/smart_class_parameter.rb:115
 msgid "Type of the parameter"
 msgstr ""
 
