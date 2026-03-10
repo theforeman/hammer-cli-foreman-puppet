@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-foreman-puppet package.
+# This file is distributed under the same license as the hammer_cli_foreman_puppet package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
@@ -8,16 +8,16 @@
 # Bryan Kearney <bryan.kearney@gmail.com>, 2021
 # Amit Upadhye <aupadhye@redhat.com>, 2022
 # Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2025
+# Ondřej Gajdušek, 2026
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer_cli_foreman_puppet 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-02 23:05+0530\n"
+"POT-Creation-Date: 2026-02-10 11:06+0000\n"
 "PO-Revision-Date: 2021-08-02 17:36+0000\n"
-"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud"
-"+transifex@kohlvanwijngaarden.nl>, 2025\n"
+"Last-Translator: Ondřej Gajdušek, 2026\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/foreman/teams/114/"
 "zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -38,24 +38,6 @@ msgstr "管理 Foreman 配置组"
 msgid "Manage Foreman Puppet smart class parameters"
 msgstr "管理 Foreman Puppet 智能类参数"
 
-msgid "Associate a Puppet environment"
-msgstr "关联一个 Puppet 环境"
-
-msgid "The environment has been associated."
-msgstr "该环境已经关联。"
-
-msgid "Could not associate the environment"
-msgstr "无法关联该环境"
-
-msgid "Disassociate a Puppet environment"
-msgstr "解除与一个 Puppet 环境的关联"
-
-msgid "The environment has been disassociated."
-msgstr "该环境已经取消关联。"
-
-msgid "Could not disassociate the environment"
-msgstr "无法取消关联该环境"
-
 msgid "Id"
 msgstr "ID"
 
@@ -64,6 +46,15 @@ msgstr "名称"
 
 msgid "Smart class parameters"
 msgstr "智能类参数"
+
+msgid "Puppet Environment"
+msgstr "Puppet 环境"
+
+msgid "Puppet Environment ID"
+msgstr "Puppet 环境 ID"
+
+msgid "Puppet Environment name"
+msgstr "Puppet 环境名称"
 
 msgid "ID of associated Puppet environment"
 msgstr "与 Puppet 环境关联的 ID"
@@ -80,11 +71,14 @@ msgstr "与 Puppet 环境关联的名称"
 msgid "List of Puppet class ids"
 msgstr "Puppet 类 id 列表"
 
-msgid "Name of Puppet CA proxy"
-msgstr "Puppet CA 代理的名称"
+msgid "IDs of associated config groups"
+msgstr "关联配置组的 ID"
 
 msgid "Name of Puppet proxy"
 msgstr "Puppet 代理的名称"
+
+msgid "Name of Puppet CA proxy"
+msgstr "Puppet CA 代理的名称"
 
 msgid "ID"
 msgstr "ID"
@@ -124,9 +118,6 @@ msgstr "已删除环境。"
 
 msgid "Could not delete the environment"
 msgstr "无法删除环境"
-
-msgid "Puppet Environment"
-msgstr "Puppet 环境"
 
 msgid "Puppet CA Proxy"
 msgstr "Puppet CA 代理服务器"
@@ -283,12 +274,3 @@ msgstr "删除的类"
 
 msgid "Ignored classes"
 msgstr "忽略的类"
-
-msgid "Puppet Environment ID"
-msgstr ""
-
-msgid "Puppet Environment name"
-msgstr ""
-
-msgid "IDs of associated config groups"
-msgstr ""

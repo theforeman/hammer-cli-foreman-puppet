@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-foreman-puppet package.
+# This file is distributed under the same license as the hammer_cli_foreman_puppet package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer_cli_foreman_puppet 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-02 23:05+0530\n"
+"POT-Creation-Date: 2026-02-10 11:06+0000\n"
 "PO-Revision-Date: 2021-08-02 17:36+0000\n"
 "Last-Translator: Amit Upadhye <aupadhye@redhat.com>, 2022\n"
 "Language-Team: Spanish (https://app.transifex.com/foreman/teams/114/es/)\n"
@@ -40,24 +40,6 @@ msgstr "Gestionar los grupos de configuración de Foreman"
 msgid "Manage Foreman Puppet smart class parameters"
 msgstr "Gestionar los parámetros de la clase inteligente Puppet de Foreman"
 
-msgid "Associate a Puppet environment"
-msgstr "Asociar un entorno Puppet"
-
-msgid "The environment has been associated."
-msgstr "El entorno se ha asociado."
-
-msgid "Could not associate the environment"
-msgstr "No se pudo asociar el ambiente."
-
-msgid "Disassociate a Puppet environment"
-msgstr "Desasociar un entorno Puppet"
-
-msgid "The environment has been disassociated."
-msgstr "El entorno se ha desasociado."
-
-msgid "Could not disassociate the environment"
-msgstr "No se pudo asociar el ambiente"
-
 msgid "Id"
 msgstr "ID"
 
@@ -66,6 +48,15 @@ msgstr "Nombre"
 
 msgid "Smart class parameters"
 msgstr "Parámetros de clase inteligentes"
+
+msgid "Puppet Environment"
+msgstr "Entorno de Puppet"
+
+msgid "Puppet Environment ID"
+msgstr ""
+
+msgid "Puppet Environment name"
+msgstr ""
 
 msgid "ID of associated Puppet environment"
 msgstr "ID del entorno Puppet asociado"
@@ -82,11 +73,14 @@ msgstr "Nombres del entorno Puppet asociado"
 msgid "List of Puppet class ids"
 msgstr "Lista de identificadores de clase de Puppet"
 
-msgid "Name of Puppet CA proxy"
-msgstr "Nombre del proxy Puppet CA"
+msgid "IDs of associated config groups"
+msgstr ""
 
 msgid "Name of Puppet proxy"
 msgstr "Nombre del proxy Puppet"
+
+msgid "Name of Puppet CA proxy"
+msgstr "Nombre del proxy Puppet CA"
 
 msgid "ID"
 msgstr "ID"
@@ -126,9 +120,6 @@ msgstr "Entorno borrado."
 
 msgid "Could not delete the environment"
 msgstr "No se pudo borrar el entorno"
-
-msgid "Puppet Environment"
-msgstr "Entorno de Puppet"
 
 msgid "Puppet CA Proxy"
 msgstr "Proxy Puppet CA"
@@ -285,12 +276,3 @@ msgstr "Clases eliminadas"
 
 msgid "Ignored classes"
 msgstr "Clases ignoradas"
-
-msgid "Puppet Environment ID"
-msgstr ""
-
-msgid "Puppet Environment name"
-msgstr ""
-
-msgid "IDs of associated config groups"
-msgstr ""

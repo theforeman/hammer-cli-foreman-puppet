@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-foreman-puppet package.
+# This file is distributed under the same license as the hammer_cli_foreman_puppet package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
@@ -9,16 +9,16 @@
 # Transifex Bot <>, 2021
 # Amit Upadhye <aupadhye@redhat.com>, 2022
 # Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2025
+# Ondřej Gajdušek, 2026
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer_cli_foreman_puppet 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-02 23:05+0530\n"
+"POT-Creation-Date: 2026-02-10 11:06+0000\n"
 "PO-Revision-Date: 2021-08-02 17:36+0000\n"
-"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud"
-"+transifex@kohlvanwijngaarden.nl>, 2025\n"
+"Last-Translator: Ondřej Gajdušek, 2026\n"
 "Language-Team: Japanese (https://app.transifex.com/foreman/teams/114/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,24 +38,6 @@ msgstr "Foreman 設定グループの管理"
 msgid "Manage Foreman Puppet smart class parameters"
 msgstr "Foreman Puppet スマートクラスパラメーターの管理"
 
-msgid "Associate a Puppet environment"
-msgstr "Puppet 環境を関連付けます。"
-
-msgid "The environment has been associated."
-msgstr "環境が関連付けられました。"
-
-msgid "Could not associate the environment"
-msgstr "環境を関連付けることができませんでした"
-
-msgid "Disassociate a Puppet environment"
-msgstr "Puppet 環境を関連付けを解除します。"
-
-msgid "The environment has been disassociated."
-msgstr "環境の関連付けが解除されました。"
-
-msgid "Could not disassociate the environment"
-msgstr "環境の関連付けを解除できませんでした"
-
 msgid "Id"
 msgstr "ID"
 
@@ -64,6 +46,15 @@ msgstr "名前"
 
 msgid "Smart class parameters"
 msgstr "スマートクラスパラメーター"
+
+msgid "Puppet Environment"
+msgstr "Puppet 環境"
+
+msgid "Puppet Environment ID"
+msgstr "Puppet 環境 ID"
+
+msgid "Puppet Environment name"
+msgstr "Puppet 環境名"
 
 msgid "ID of associated Puppet environment"
 msgstr "関連する Puppet 環境の ID"
@@ -80,11 +71,14 @@ msgstr "関連する Puppet 環境の 名前"
 msgid "List of Puppet class ids"
 msgstr "Puppet クラス ID の一覧"
 
-msgid "Name of Puppet CA proxy"
-msgstr "Puppet CA プロキシーの名前"
+msgid "IDs of associated config groups"
+msgstr "関連付けられた設定グループの ID"
 
 msgid "Name of Puppet proxy"
 msgstr "Puppet プロキシーの名前"
+
+msgid "Name of Puppet CA proxy"
+msgstr "Puppet CA プロキシーの名前"
 
 msgid "ID"
 msgstr "ID"
@@ -124,9 +118,6 @@ msgstr "環境が削除されました。"
 
 msgid "Could not delete the environment"
 msgstr "環境を削除できませんでした"
-
-msgid "Puppet Environment"
-msgstr "Puppet 環境"
 
 msgid "Puppet CA Proxy"
 msgstr "Puppet CA プロキシー"
@@ -283,12 +274,3 @@ msgstr "削除済みのクラス"
 
 msgid "Ignored classes"
 msgstr "無視するクラス"
-
-msgid "Puppet Environment ID"
-msgstr ""
-
-msgid "Puppet Environment name"
-msgstr ""
-
-msgid "IDs of associated config groups"
-msgstr ""

@@ -1,22 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-foreman-puppet package.
+# This file is distributed under the same license as the hammer_cli_foreman_puppet package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
 # 0868a4d1af5275b3f70b0a6dac4c99a4, 2021
 # Bryan Kearney <bryan.kearney@gmail.com>, 2021
 # Ewoud Kohl van Wijngaarden <ewoud+transifex@kohlvanwijngaarden.nl>, 2024
+# Ondřej Gajdušek, 2026
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: hammer_cli_foreman_puppet 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-02 23:05+0530\n"
+"POT-Creation-Date: 2026-02-10 11:06+0000\n"
 "PO-Revision-Date: 2021-08-02 17:36+0000\n"
-"Last-Translator: Ewoud Kohl van Wijngaarden <ewoud"
-"+transifex@kohlvanwijngaarden.nl>, 2024\n"
+"Last-Translator: Ondřej Gajdušek, 2026\n"
 "Language-Team: Korean (https://app.transifex.com/foreman/teams/114/ko/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,24 +36,6 @@ msgstr "Foreman config 그룹 관리"
 msgid "Manage Foreman Puppet smart class parameters"
 msgstr "Foreman Puppet 스마트 클래스 매개변수 관리"
 
-msgid "Associate a Puppet environment"
-msgstr "Puppet 환경 연결"
-
-msgid "The environment has been associated."
-msgstr "환경이 연결되어 있습니다."
-
-msgid "Could not associate the environment"
-msgstr "환경을 연결할 수 없음"
-
-msgid "Disassociate a Puppet environment"
-msgstr "Puppet 환경 분리"
-
-msgid "The environment has been disassociated."
-msgstr "환경이 분리되었습니다."
-
-msgid "Could not disassociate the environment"
-msgstr "환경을 분리할 수 없음"
-
 msgid "Id"
 msgstr "ID"
 
@@ -62,6 +44,15 @@ msgstr "이름 "
 
 msgid "Smart class parameters"
 msgstr "스마트 클래스 매개 변수 "
+
+msgid "Puppet Environment"
+msgstr "Puppet 환경 "
+
+msgid "Puppet Environment ID"
+msgstr "Puppet 환경 ID"
+
+msgid "Puppet Environment name"
+msgstr "Puppet 환경 이름"
 
 msgid "ID of associated Puppet environment"
 msgstr "연결된 Puppet 환경의 ID"
@@ -78,11 +69,14 @@ msgstr "연결된 Puppet 환경의 이름"
 msgid "List of Puppet class ids"
 msgstr "Puppet 클래스 ID 목록"
 
-msgid "Name of Puppet CA proxy"
-msgstr "Puppet CA 프록시 이름"
+msgid "IDs of associated config groups"
+msgstr "연결된 구성 그룹의 ID"
 
 msgid "Name of Puppet proxy"
 msgstr "Puppet 프록시 이름"
+
+msgid "Name of Puppet CA proxy"
+msgstr "Puppet CA 프록시 이름"
 
 msgid "ID"
 msgstr "ID"
@@ -122,9 +116,6 @@ msgstr "환경이 삭제되었습니다."
 
 msgid "Could not delete the environment"
 msgstr "환경을 삭제할 수 없습니다 "
-
-msgid "Puppet Environment"
-msgstr "Puppet 환경 "
 
 msgid "Puppet CA Proxy"
 msgstr "Puppet CA 프록시"
@@ -281,12 +272,3 @@ msgstr "제거된 클래스"
 
 msgid "Ignored classes"
 msgstr "무시된 클래스"
-
-msgid "Puppet Environment ID"
-msgstr ""
-
-msgid "Puppet Environment name"
-msgstr ""
-
-msgid "IDs of associated config groups"
-msgstr ""
