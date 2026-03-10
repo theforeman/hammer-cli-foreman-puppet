@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the hammer-cli-foreman-puppet package.
+# This file is distributed under the same license as the hammer_cli_foreman_puppet package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # Translators:
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hammer_cli_foreman_puppet 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-02 23:05+0530\n"
+"POT-Creation-Date: 2026-02-10 11:06+0000\n"
 "PO-Revision-Date: 2021-08-02 17:36+0000\n"
 "Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2021\n"
 "Language-Team: Czech (Czech Republic) (https://app.transifex.com/foreman/"
@@ -35,24 +35,6 @@ msgstr ""
 msgid "Manage Foreman Puppet smart class parameters"
 msgstr ""
 
-msgid "Associate a Puppet environment"
-msgstr ""
-
-msgid "The environment has been associated."
-msgstr ""
-
-msgid "Could not associate the environment"
-msgstr ""
-
-msgid "Disassociate a Puppet environment"
-msgstr ""
-
-msgid "The environment has been disassociated."
-msgstr ""
-
-msgid "Could not disassociate the environment"
-msgstr ""
-
 msgid "Id"
 msgstr "Identifikátor"
 
@@ -60,6 +42,15 @@ msgid "Name"
 msgstr "Název"
 
 msgid "Smart class parameters"
+msgstr ""
+
+msgid "Puppet Environment"
+msgstr "Puppet prostředí"
+
+msgid "Puppet Environment ID"
+msgstr ""
+
+msgid "Puppet Environment name"
 msgstr ""
 
 msgid "ID of associated Puppet environment"
@@ -77,10 +68,13 @@ msgstr ""
 msgid "List of Puppet class ids"
 msgstr ""
 
-msgid "Name of Puppet CA proxy"
+msgid "IDs of associated config groups"
 msgstr ""
 
 msgid "Name of Puppet proxy"
+msgstr ""
+
+msgid "Name of Puppet CA proxy"
 msgstr ""
 
 msgid "ID"
@@ -121,9 +115,6 @@ msgstr "Prostředí smazáno."
 
 msgid "Could not delete the environment"
 msgstr "Prostředí se nedaří smazat"
-
-msgid "Puppet Environment"
-msgstr "Puppet prostředí"
 
 msgid "Puppet CA Proxy"
 msgstr ""
@@ -279,13 +270,4 @@ msgid "Removed classes"
 msgstr ""
 
 msgid "Ignored classes"
-msgstr ""
-
-msgid "Puppet Environment ID"
-msgstr ""
-
-msgid "Puppet Environment name"
-msgstr ""
-
-msgid "IDs of associated config groups"
 msgstr ""
